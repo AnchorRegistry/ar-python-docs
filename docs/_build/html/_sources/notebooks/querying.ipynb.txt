@@ -1,0 +1,105 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "metadata": {},
+   "source": [
+    "# Querying\n",
+    "\n",
+    "All five query functions demonstrated against live Sepolia data.\n",
+    "\n",
+    "> These examples run against Sepolia testnet (`network=\"sepolia\"`).\n",
+    "> To run against Base mainnet: replace `configure(network=\"sepolia\")` with `configure(network=\"base\")`.\n",
+    "> All function calls, record structures, and output shapes are identical across networks."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Cell 1 — setup\n",
+    "from anchorregistry import configure, get_by_arid, get_by_registrant, get_by_tree, get_by_type, get_all\n",
+    "from anchorregistry.enums import ArtifactType\n",
+    "\n",
+    "configure(network=\"sepolia\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Cell 2 — get_by_arid\n",
+    "# Fetch a single anchor by its AR-ID\n",
+    "record = get_by_arid(\"AR-2026-x1llnO1\")\n",
+    "print(f\"Type:   {record['artifact_type_name']}\")\n",
+    "print(f\"Title:  {record['title']}\")\n",
+    "print(f\"Author: {record['author']}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Cell 3 — get_by_registrant\n",
+    "# Fetch all anchors registered by a specific wallet address\n",
+    "records = get_by_registrant(\"0xC7a7AFde1177fbf0Bb265Ea5a616d1b8D7eD8c44\")\n",
+    "print(f\"Total anchors by registrant: {len(records)}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Cell 4 — get_by_tree\n",
+    "# Fetch all anchors belonging to a named artifact tree\n",
+    "records = get_by_tree(\"ar-operator-v1\")\n",
+    "print(f\"Total anchors in tree: {len(records)}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Cell 5 — get_by_type\n",
+    "# Fetch all anchors of a given artifact type\n",
+    "code_anchors = get_by_type(ArtifactType.CODE)\n",
+    "print(f\"CODE anchors on Sepolia: {len(code_anchors)}\")"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# Cell 6 — get_all\n",
+    "# Reconstruct the full registry — all anchors from deploy block to latest\n",
+    "all_records = get_all()\n",
+    "print(f\"Total anchors on Sepolia: {len(all_records)}\")"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "name": "python",
+   "version": "3.11.0"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

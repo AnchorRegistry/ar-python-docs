@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contract Reference &mdash; anchorregistry 0.1.3 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Quickstart" href="notebooks/quickstart.html" />
+    <link rel="prev" title="API Reference" href="api.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> anchorregistry
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Contract Reference</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#deployed-contract">Deployed Contract</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#anchored-event">Anchored Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#read-abi">READ_ABI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#artifact-types">Artifact Types</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Interactive Notebooks</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/querying.html">Querying</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/recover.html">The Trust Proof</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/watermark.html">Watermarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/dataframe.html">DataFrame Analytics</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">anchorregistry</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Contract Reference</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/contract.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="contract-reference">
+<h1>Contract Reference<a class="headerlink" href="#contract-reference" title="Permalink to this heading"></a></h1>
+<section id="deployed-contract">
+<h2>Deployed Contract<a class="headerlink" href="#deployed-contract" title="Permalink to this heading"></a></h2>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 18%" />
+<col style="width: 45%" />
+<col style="width: 18%" />
+<col style="width: 19%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Network</p></th>
+<th class="head"><p>Address</p></th>
+<th class="head"><p>Deploy Block</p></th>
+<th class="head"><p>Etherscan</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Base mainnet</p></td>
+<td><p>TBD</p></td>
+<td><p>TBD</p></td>
+<td><p>TBD</p></td>
+</tr>
+<tr class="row-odd"><td><p>Sepolia testnet</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0x9dAb9f5B754f8C56B5F7BAd3E92A8bDe7317AD29</span></code></p></td>
+<td><p>10562312</p></td>
+<td><p><a class="reference external" href="https://sepolia.etherscan.io/address/0x9dAb9f5B754f8C56B5F7BAd3E92A8bDe7317AD29">View on Etherscan</a></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="anchored-event">
+<h2>Anchored Event<a class="headerlink" href="#anchored-event" title="Permalink to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">Anchored</span></code> event is emitted once per registration. It is the sole source of truth for reconstructing the registry from on-chain data.</p>
+<div class="highlight-solidity notranslate"><div class="highlight"><pre><span></span><span class="kt">event</span><span class="w"> </span><span class="nv">Anchored</span><span class="p">(</span><span class="w"></span>
+<span class="w">    </span><span class="kt">string</span><span class="w">  </span><span class="nv">indexed</span><span class="w"> </span>arId<span class="p">,</span><span class="w">           </span><span class="c1">// AR-ID (keccak256 indexed)</span>
+<span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">indexed</span><span class="w"> </span>registrant<span class="p">,</span><span class="w">     </span><span class="c1">// wallet that called anchor()</span>
+<span class="w">    </span><span class="kt">uint8</span><span class="w">           </span><span class="nv">artifactType</span><span class="p">,</span><span class="w">   </span><span class="c1">// ArtifactType enum value (0–22)</span>
+<span class="w">    </span><span class="kt">string</span><span class="w">          </span><span class="nv">arIdPlain</span><span class="p">,</span><span class="w">      </span><span class="c1">// AR-ID plain text (not indexed)</span>
+<span class="w">    </span><span class="kt">string</span><span class="w">          </span><span class="nv">descriptor</span><span class="p">,</span><span class="w">     </span><span class="c1">// short descriptor / subtitle</span>
+<span class="w">    </span><span class="kt">string</span><span class="w">          </span><span class="nv">title</span><span class="p">,</span><span class="w">          </span><span class="c1">// artifact title</span>
+<span class="w">    </span><span class="kt">string</span><span class="w">          </span><span class="nv">author</span><span class="p">,</span><span class="w">         </span><span class="c1">// human-readable author / org name</span>
+<span class="w">    </span><span class="kt">string</span><span class="w">          </span><span class="nv">manifestHash</span><span class="p">,</span><span class="w">   </span><span class="c1">// content hash (SHA-256 or IPFS CID)</span>
+<span class="w">    </span><span class="kt">string</span><span class="w">          </span><span class="nv">parentArId</span><span class="p">,</span><span class="w">     </span><span class="c1">// parent AR-ID (&quot;&quot; if root)</span>
+<span class="w">    </span><span class="kt">string</span><span class="w">  </span><span class="nv">indexed</span><span class="w"> </span>treeId<span class="p">,</span><span class="w">         </span><span class="c1">// tree identifier (keccak256 indexed)</span>
+<span class="w">    </span><span class="kt">string</span><span class="w">          </span><span class="nv">treeIdPlain</span><span class="w">     </span><span class="c1">// tree identifier plain text</span>
+<span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p><strong>Field descriptions:</strong></p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 22%" />
+<col style="width: 12%" />
+<col style="width: 66%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Field</p></th>
+<th class="head"><p>Type</p></th>
+<th class="head"><p>Description</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">arId</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Unique AnchorRegistry identifier, e.g. <code class="docutils literal notranslate"><span class="pre">AR-2026-x1llnO1</span></code>. Indexed — stored as <code class="docutils literal notranslate"><span class="pre">keccak256</span></code> in logs.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">registrant</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">address</span></code></p></td>
+<td><p>Ethereum address of the wallet that submitted the <code class="docutils literal notranslate"><span class="pre">anchor()</span></code> transaction.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">artifactType</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">uint8</span></code></p></td>
+<td><p>Integer index into the <code class="docutils literal notranslate"><span class="pre">ArtifactType</span></code> enum (0–22). See the type taxonomy below.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">arIdPlain</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Human-readable AR-ID. Identical to <code class="docutils literal notranslate"><span class="pre">arId</span></code> but not indexed — readable from log data.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">descriptor</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Short subtitle or descriptor for the artifact.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">title</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Full title of the artifact.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">author</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Human-readable author or organization name.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">manifestHash</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Content hash (SHA-256 hex or IPFS CID) proving the artifact’s content at registration time.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">parentArId</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>AR-ID of the parent artifact. Empty string <code class="docutils literal notranslate"><span class="pre">&quot;&quot;</span></code> if this is a root anchor.</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">treeId</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Identifier for the artifact tree this anchor belongs to. Indexed.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">treeIdPlain</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
+<td><p>Human-readable tree identifier. Identical to <code class="docutils literal notranslate"><span class="pre">treeId</span></code> but not indexed.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="read-abi">
+<h2>READ_ABI<a class="headerlink" href="#read-abi" title="Permalink to this heading"></a></h2>
+<p>The minimal ABI used by <code class="docutils literal notranslate"><span class="pre">anchorregistry</span></code> to read from the contract. This is the only ABI needed — the package never writes to the contract.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">READ_ABI</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1"># Anchored event</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;anonymous&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Anchored&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;event&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;inputs&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s2">&quot;indexed&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;arId&quot;</span><span class="p">,</span>         <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;indexed&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;address&quot;</span><span class="p">,</span>           <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;registrant&quot;</span><span class="p">,</span>   <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;address&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;indexed&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;enum ArtifactType&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;artifactType&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;uint8&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;indexed&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;arIdPlain&quot;</span><span class="p">,</span>    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;indexed&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;descriptor&quot;</span><span class="p">,</span>   <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;indexed&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;title&quot;</span><span class="p">,</span>        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;indexed&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;author&quot;</span><span class="p">,</span>       <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;indexed&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;manifestHash&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;indexed&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;parentArId&quot;</span><span class="p">,</span>   <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;indexed&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;treeId&quot;</span><span class="p">,</span>       <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;indexed&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;treeIdPlain&quot;</span><span class="p">,</span>  <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">},</span>
+        <span class="p">],</span>
+    <span class="p">},</span>
+    <span class="c1"># registered(arId) → bool</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;function&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;registered&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;stateMutability&quot;</span><span class="p">:</span> <span class="s2">&quot;view&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;inputs&quot;</span><span class="p">:</span>  <span class="p">[{</span><span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">}],</span>
+        <span class="s2">&quot;outputs&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;bool&quot;</span><span class="p">,</span>   <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bool&quot;</span><span class="p">}],</span>
+    <span class="p">},</span>
+    <span class="c1"># getAnchorData(arId) → bytes</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;function&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;getAnchorData&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;stateMutability&quot;</span><span class="p">:</span> <span class="s2">&quot;view&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;inputs&quot;</span><span class="p">:</span>  <span class="p">[{</span><span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;arId&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">}],</span>
+        <span class="s2">&quot;outputs&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;bytes&quot;</span><span class="p">,</span>  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>     <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bytes&quot;</span><span class="p">}],</span>
+    <span class="p">},</span>
+    <span class="c1"># anchorTypes(arId) → uint8</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;function&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;anchorTypes&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;stateMutability&quot;</span><span class="p">:</span> <span class="s2">&quot;view&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;inputs&quot;</span><span class="p">:</span>  <span class="p">[{</span><span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>  <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">}],</span>
+        <span class="s2">&quot;outputs&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;uint8&quot;</span><span class="p">,</span>   <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>  <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;uint8&quot;</span><span class="p">}],</span>
+    <span class="p">},</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="artifact-types">
+<h2>Artifact Types<a class="headerlink" href="#artifact-types" title="Permalink to this heading"></a></h2>
+<p>Twenty-three artifact types in eight logical groups. The <code class="docutils literal notranslate"><span class="pre">artifact_type_name</span></code> field in every record contains the string name. The <code class="docutils literal notranslate"><span class="pre">artifactType</span></code> field in the raw event contains the integer index.</p>
+<table class="colwidths-given docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 18%" />
+<col style="width: 18%" />
+<col style="width: 54%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Index</p></th>
+<th class="head"><p>Name</p></th>
+<th class="head"><p>Category</p></th>
+<th class="head"><p>Type-specific <code class="docutils literal notranslate"><span class="pre">data</span></code> fields</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">CODE</span></code></p></td>
+<td><p>Content</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">git_hash</span></code>, <code class="docutils literal notranslate"><span class="pre">license</span></code>, <code class="docutils literal notranslate"><span class="pre">language</span></code>, <code class="docutils literal notranslate"><span class="pre">version</span></code>, <code class="docutils literal notranslate"><span class="pre">url</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">RESEARCH</span></code></p></td>
+<td><p>Content</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">doi</span></code>, <code class="docutils literal notranslate"><span class="pre">institution</span></code>, <code class="docutils literal notranslate"><span class="pre">co_authors</span></code>, <code class="docutils literal notranslate"><span class="pre">url</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">DATA</span></code></p></td>
+<td><p>Content</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">data_version</span></code>, <code class="docutils literal notranslate"><span class="pre">format</span></code>, <code class="docutils literal notranslate"><span class="pre">row_count</span></code>, <code class="docutils literal notranslate"><span class="pre">schema_url</span></code>, <code class="docutils literal notranslate"><span class="pre">url</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">MODEL</span></code></p></td>
+<td><p>Content</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">model_version</span></code>, <code class="docutils literal notranslate"><span class="pre">architecture</span></code>, <code class="docutils literal notranslate"><span class="pre">parameters</span></code>, <code class="docutils literal notranslate"><span class="pre">training_dataset</span></code>, <code class="docutils literal notranslate"><span class="pre">url</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">AGENT</span></code></p></td>
+<td><p>Content</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">agent_version</span></code>, <code class="docutils literal notranslate"><span class="pre">runtime</span></code>, <code class="docutils literal notranslate"><span class="pre">capabilities</span></code>, <code class="docutils literal notranslate"><span class="pre">url</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">MEDIA</span></code></p></td>
+<td><p>Content</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">media_type</span></code>, <code class="docutils literal notranslate"><span class="pre">platform</span></code>, <code class="docutils literal notranslate"><span class="pre">format</span></code>, <code class="docutils literal notranslate"><span class="pre">duration</span></code>, <code class="docutils literal notranslate"><span class="pre">isrc</span></code>, <code class="docutils literal notranslate"><span class="pre">url</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">TEXT</span></code></p></td>
+<td><p>Content</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">text_type</span></code>, <code class="docutils literal notranslate"><span class="pre">isbn</span></code>, <code class="docutils literal notranslate"><span class="pre">publisher</span></code>, <code class="docutils literal notranslate"><span class="pre">language</span></code>, <code class="docutils literal notranslate"><span class="pre">url</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">POST</span></code></p></td>
+<td><p>Content</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">platform</span></code>, <code class="docutils literal notranslate"><span class="pre">post_id</span></code>, <code class="docutils literal notranslate"><span class="pre">post_date</span></code>, <code class="docutils literal notranslate"><span class="pre">url</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ONCHAIN</span></code></p></td>
+<td><p>Content</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">chain_id</span></code>, <code class="docutils literal notranslate"><span class="pre">asset_type</span></code>, <code class="docutils literal notranslate"><span class="pre">contract_address</span></code>, <code class="docutils literal notranslate"><span class="pre">tx_hash</span></code>, <code class="docutils literal notranslate"><span class="pre">token_id</span></code>, <code class="docutils literal notranslate"><span class="pre">block_number</span></code>, <code class="docutils literal notranslate"><span class="pre">url</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">REPORT</span></code></p></td>
+<td><p>Content</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">report_type</span></code>, <code class="docutils literal notranslate"><span class="pre">client</span></code>, <code class="docutils literal notranslate"><span class="pre">engagement</span></code>, <code class="docutils literal notranslate"><span class="pre">version</span></code>, <code class="docutils literal notranslate"><span class="pre">authors</span></code>, <code class="docutils literal notranslate"><span class="pre">institution</span></code>, <code class="docutils literal notranslate"><span class="pre">url</span></code>, <code class="docutils literal notranslate"><span class="pre">file_manifest_hash</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>10</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">NOTE</span></code></p></td>
+<td><p>Content</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">note_type</span></code>, <code class="docutils literal notranslate"><span class="pre">date</span></code>, <code class="docutils literal notranslate"><span class="pre">participants</span></code>, <code class="docutils literal notranslate"><span class="pre">url</span></code>, <code class="docutils literal notranslate"><span class="pre">file_manifest_hash</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>11</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">WEBSITE</span></code></p></td>
+<td><p>Content</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">url</span></code>, <code class="docutils literal notranslate"><span class="pre">platform</span></code>, <code class="docutils literal notranslate"><span class="pre">description</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>12</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">EVENT</span></code></p></td>
+<td><p>Lifecycle</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">executor</span></code>, <code class="docutils literal notranslate"><span class="pre">event_type</span></code>, <code class="docutils literal notranslate"><span class="pre">event_date</span></code>, <code class="docutils literal notranslate"><span class="pre">location</span></code>, <code class="docutils literal notranslate"><span class="pre">orchestrator</span></code>, <code class="docutils literal notranslate"><span class="pre">url</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>13</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">RECEIPT</span></code></p></td>
+<td><p>Transaction</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">receipt_type</span></code>, <code class="docutils literal notranslate"><span class="pre">merchant</span></code>, <code class="docutils literal notranslate"><span class="pre">amount</span></code>, <code class="docutils literal notranslate"><span class="pre">currency</span></code>, <code class="docutils literal notranslate"><span class="pre">order_id</span></code>, <code class="docutils literal notranslate"><span class="pre">platform</span></code>, <code class="docutils literal notranslate"><span class="pre">url</span></code>, <code class="docutils literal notranslate"><span class="pre">file_manifest_hash</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>14</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">LEGAL</span></code></p></td>
+<td><p>Gated</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">doc_type</span></code>, <code class="docutils literal notranslate"><span class="pre">jurisdiction</span></code>, <code class="docutils literal notranslate"><span class="pre">parties</span></code>, <code class="docutils literal notranslate"><span class="pre">effective_date</span></code>, <code class="docutils literal notranslate"><span class="pre">url</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>15</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ENTITY</span></code></p></td>
+<td><p>Gated</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">entity_type</span></code>, <code class="docutils literal notranslate"><span class="pre">entity_domain</span></code>, <code class="docutils literal notranslate"><span class="pre">verification_method</span></code>, <code class="docutils literal notranslate"><span class="pre">verification_proof</span></code>, <code class="docutils literal notranslate"><span class="pre">canonical_url</span></code>, <code class="docutils literal notranslate"><span class="pre">document_hash</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>16</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">PROOF</span></code></p></td>
+<td><p>Gated</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">proof_type</span></code>, <code class="docutils literal notranslate"><span class="pre">proof_system</span></code>, <code class="docutils literal notranslate"><span class="pre">circuit_id</span></code>, <code class="docutils literal notranslate"><span class="pre">vkey_hash</span></code>, <code class="docutils literal notranslate"><span class="pre">audit_firm</span></code>, <code class="docutils literal notranslate"><span class="pre">audit_scope</span></code>, <code class="docutils literal notranslate"><span class="pre">verifier_url</span></code>, <code class="docutils literal notranslate"><span class="pre">report_url</span></code>, <code class="docutils literal notranslate"><span class="pre">proof_hash</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>17</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">RETRACTION</span></code></p></td>
+<td><p>Self-service</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">reason</span></code>, <code class="docutils literal notranslate"><span class="pre">replaced_by</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>18</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">REVIEW</span></code></p></td>
+<td><p>Review</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">review_type</span></code>, <code class="docutils literal notranslate"><span class="pre">evidence_url</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>19</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">VOID</span></code></p></td>
+<td><p>Review</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">review_ar_id</span></code>, <code class="docutils literal notranslate"><span class="pre">finding_url</span></code>, <code class="docutils literal notranslate"><span class="pre">evidence</span></code></p></td>
+</tr>
+<tr class="row-even"><td><p>20</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">AFFIRMED</span></code></p></td>
+<td><p>Review</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">affirmed_by</span></code>, <code class="docutils literal notranslate"><span class="pre">finding_url</span></code></p></td>
+</tr>
+<tr class="row-odd"><td><p>21</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ACCOUNT</span></code></p></td>
+<td><p>Billing</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">capacity</span></code> <em>(uint256)</em></p></td>
+</tr>
+<tr class="row-even"><td><p>22</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">OTHER</span></code></p></td>
+<td><p>Catch-all</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">kind</span></code>, <code class="docutils literal notranslate"><span class="pre">platform</span></code>, <code class="docutils literal notranslate"><span class="pre">url</span></code>, <code class="docutils literal notranslate"><span class="pre">value</span></code>, <code class="docutils literal notranslate"><span class="pre">file_manifest_hash</span></code></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="api.html" class="btn btn-neutral float-left" title="API Reference" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="notebooks/quickstart.html" class="btn btn-neutral float-right" title="Quickstart" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Ian Moore.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -42,6 +42,7 @@ Installation
    notebooks/recover
    notebooks/watermark
    notebooks/dataframe
+   notebooks/authenticate
 
 ----
 

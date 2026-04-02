@@ -23,7 +23,8 @@ docs/
     ├── querying.ipynb       # all five query functions demonstrated
     ├── recover.ipynb        # full registry reconstruction — the trust proof
     ├── watermark.ipynb      # SPDX-Anchor / DAPX-Anchor generation
-    └── dataframe.ipynb      # to_dataframe() — analytics use case
+    ├── dataframe.ipynb      # to_dataframe() — analytics use case
+    └── authenticate.ipynb   # trustless initiation proof — authenticate_anchor / authenticate_tree
 ```
 
 ---

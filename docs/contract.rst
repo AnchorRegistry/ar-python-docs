@@ -39,7 +39,8 @@ The ``Anchored`` event is emitted once per registration. It is the sole source o
        string          manifestHash,   // content hash (SHA-256 or IPFS CID)
        string          parentArId,     // parent AR-ID ("" if root)
        string  indexed treeId,         // tree identifier (keccak256 indexed)
-       string          treeIdPlain     // tree identifier plain text
+       string          treeIdPlain,    // tree identifier plain text
+       bytes32         tokenCommitment // keccak256(K || arId), bytes32(0) for governance
    );
 
 **Field descriptions:**
@@ -84,6 +85,9 @@ The ``Anchored`` event is emitted once per registration. It is the sole source o
    * - ``treeIdPlain``
      - ``string``
      - Human-readable tree identifier. Identical to ``treeId`` but not indexed.
+   * - ``tokenCommitment``
+     - ``bytes32``
+     - Ownership proof: ``keccak256(K || arId)`` for user-initiated anchors, ``bytes32(0)`` for governance anchors. ``K`` is the ownership token known only to the registrant.
 
 READ_ABI
 --------
@@ -110,6 +114,7 @@ The minimal ABI used by ``anchorregistry`` to read from the contract. This is th
                {"indexed": False, "internalType": "string",            "name": "parentArId",   "type": "string"},
                {"indexed": True,  "internalType": "string",            "name": "treeId",       "type": "string"},
                {"indexed": False, "internalType": "string",            "name": "treeIdPlain",  "type": "string"},
+               {"indexed": False, "internalType": "bytes32",           "name": "tokenCommitment", "type": "bytes32"},
            ],
        },
        # registered(arId) → bool

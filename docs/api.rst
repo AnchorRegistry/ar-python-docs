@@ -28,6 +28,8 @@ Authentication
 
 .. autofunction:: anchorregistry.authenticate_tree
 
+.. autofunction:: anchorregistry.is_sealed
+
 .. autofunction:: anchorregistry.is_user_initiated
 
 Watermarking

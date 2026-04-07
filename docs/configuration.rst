@@ -65,8 +65,8 @@ Network presets
      - TBD
      - 8453
    * - Sepolia testnet
-     - ``0x9dAb9f5B754f8C56B5F7BAd3E92A8bDe7317AD29``
-     - 10562312
+     - ``0xE772B7f4eC4a92109b8b892Add205ede7c850DBa``
+     - 10575629
      - 11155111
 
 Switching networks within a process

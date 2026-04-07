@@ -13,7 +13,7 @@ import sys
 project = "anchorregistry"
 author = "Ian Moore"
 copyright = "2026, Ian Moore"
-release = "0.1.4"
+release = "0.1.5"
 
 # -- General configuration ----------------------------------------------------
 extensions = [

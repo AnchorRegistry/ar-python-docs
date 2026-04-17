@@ -1,25 +1,25 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Querying &mdash; anchorregistry 0.1.3 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <title>Querying &mdash; anchorregistry 0.1.6 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=6e0256f3"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -32,11 +32,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> anchorregistry
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            anchorregistry
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -56,6 +60,7 @@
 <li class="toctree-l1"><a class="reference internal" href="recover.html">The Trust Proof</a></li>
 <li class="toctree-l1"><a class="reference internal" href="watermark.html">Watermarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dataframe.html">DataFrame Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authenticate.html">Authenticate — Trustless Initiation Proof</a></li>
 </ul>
 
         </div>
@@ -71,8 +76,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Querying</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Querying</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/notebooks/querying.ipynb.txt" rel="nofollow"> View page source</a>
       </li>
@@ -83,79 +88,165 @@
            <div itemprop="articleBody">
              
   <section id="Querying">
-<h1>Querying<a class="headerlink" href="#Querying" title="Permalink to this heading"></a></h1>
+<h1>Querying<a class="headerlink" href="#Querying" title="Link to this heading"></a></h1>
 <p>All five query functions demonstrated against live Sepolia data.</p>
 <blockquote>
 <div><p>These examples run against Sepolia testnet (<code class="docutils literal notranslate"><span class="pre">network=&quot;sepolia&quot;</span></code>). To run against Base mainnet: replace <code class="docutils literal notranslate"><span class="pre">configure(network=&quot;sepolia&quot;)</span></code> with <code class="docutils literal notranslate"><span class="pre">configure(network=&quot;base&quot;)</span></code>. All function calls, record structures, and output shapes are identical across networks.</p>
 </div></blockquote>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cell 1 — setup</span>
-<span class="kn">from</span> <span class="nn">anchorregistry</span> <span class="kn">import</span> <span class="n">configure</span><span class="p">,</span> <span class="n">get_by_arid</span><span class="p">,</span> <span class="n">get_by_registrant</span><span class="p">,</span> <span class="n">get_by_tree</span><span class="p">,</span> <span class="n">get_by_type</span><span class="p">,</span> <span class="n">get_all</span>
-<span class="kn">from</span> <span class="nn">anchorregistry.enums</span> <span class="kn">import</span> <span class="n">ArtifactType</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Cell 1 — setup
+from anchorregistry import configure, get_by_arid, get_by_registrant, get_by_tree, get_by_type, get_all
+from anchorregistry import ARTIFACT_TYPE_MAP
+from anchorregistry.enums import ArtifactType
 
-<span class="n">configure</span><span class="p">(</span><span class="n">network</span><span class="o">=</span><span class="s2">&quot;sepolia&quot;</span><span class="p">)</span>
+configure(network=&quot;sepolia&quot;, rpc_url=&quot;https://ethereum-sepolia-rpc.publicnode.com&quot;)
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cell 2 — get_by_arid</span>
-<span class="c1"># Fetch a single anchor by its AR-ID</span>
-<span class="n">record</span> <span class="o">=</span> <span class="n">get_by_arid</span><span class="p">(</span><span class="s2">&quot;AR-2026-x1llnO1&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Type:   </span><span class="si">{</span><span class="n">record</span><span class="p">[</span><span class="s1">&#39;artifact_type_name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Title:  </span><span class="si">{</span><span class="n">record</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Author: </span><span class="si">{</span><span class="n">record</span><span class="p">[</span><span class="s1">&#39;author&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cell 3 — get_by_registrant</span>
-<span class="c1"># Fetch all anchors registered by a specific wallet address</span>
-<span class="n">records</span> <span class="o">=</span> <span class="n">get_by_registrant</span><span class="p">(</span><span class="s2">&quot;0xC7a7AFde1177fbf0Bb265Ea5a616d1b8D7eD8c44&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total anchors by registrant: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">records</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Cell 2 — get_by_arid
+# Fetch a single anchor by its AR-ID
+record = get_by_arid(&quot;AR-2026-j1BgLvP&quot;)
+print(f&quot;Type:   {record[&#39;artifact_type_name&#39;]}&quot;)
+print(f&quot;Title:  {record[&#39;title&#39;]}&quot;)
+print(f&quot;Data:   {record[&#39;data&#39;]}&quot;)
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Type:   RESEARCH
+Title:  test research
+Data:   {&#39;doi&#39;: &#39;&#39;, &#39;institution&#39;: &#39;&#39;, &#39;co_authors&#39;: &#39;&#39;, &#39;url&#39;: &#39;https://arxiv.org/&#39;}
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cell 4 — get_by_tree</span>
-<span class="c1"># Fetch all anchors belonging to a named artifact tree</span>
-<span class="n">records</span> <span class="o">=</span> <span class="n">get_by_tree</span><span class="p">(</span><span class="s2">&quot;ar-operator-v1&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total anchors in tree: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">records</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Cell 3 — get_by_registrant
+# Fetch all anchors registered by a specific wallet address
+records = get_by_registrant(&quot;0xc7a7afde1177fbf0bb265ea5a616d1b8d7ed8c44&quot;)
+print(f&quot;Total anchors by registrant: {len(records)}&quot;)
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Total anchors by registrant: 13
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cell 5 — get_by_type</span>
-<span class="c1"># Fetch all anchors of a given artifact type</span>
-<span class="n">code_anchors</span> <span class="o">=</span> <span class="n">get_by_type</span><span class="p">(</span><span class="n">ArtifactType</span><span class="o">.</span><span class="n">CODE</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;CODE anchors on Sepolia: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">code_anchors</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Cell 4 — get_by_tree
+# Fetch all anchors belonging to a named artifact tree
+records = get_by_tree(&quot;7ec2e3117b73605f7eb339fa9d550d08eec94cc5003a8efe61b9075eb88fa7bb&quot;)
+print(f&quot;Total anchors in tree: {len(records)}&quot;)
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Total anchors in tree: 0
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cell 6 — get_all</span>
-<span class="c1"># Reconstruct the full registry — all anchors from deploy block to latest</span>
-<span class="n">all_records</span> <span class="o">=</span> <span class="n">get_all</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total anchors on Sepolia: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">all_records</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Cell 5 — get_by_type
+# Fetch all anchors of a given artifact type
+research_anchors = get_by_type(ArtifactType.RESEARCH)
+print(f&quot;RESEARCH anchors on Sepolia: {len(research_anchors)}&quot;)
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+RESEARCH anchors on Sepolia: 10
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Cell 6 — get_all
+# Reconstruct the full registry — all anchors from deploy block to latest
+all_records = get_all()
+print(f&quot;Total anchors on Sepolia: {len(all_records)}&quot;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Total anchors on Sepolia: 13
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Cell 7 — ARTIFACT_TYPE_MAP
+# Maps integer type indices to human-readable names
+# Useful for decoding artifact_type_index in raw records
+{k: v for k, v in ARTIFACT_TYPE_MAP.items()}
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{0: &#39;CODE&#39;,
+ 1: &#39;RESEARCH&#39;,
+ 2: &#39;DATA&#39;,
+ 3: &#39;MODEL&#39;,
+ 4: &#39;AGENT&#39;,
+ 5: &#39;MEDIA&#39;,
+ 6: &#39;TEXT&#39;,
+ 7: &#39;POST&#39;,
+ 8: &#39;ONCHAIN&#39;,
+ 9: &#39;REPORT&#39;,
+ 10: &#39;NOTE&#39;,
+ 11: &#39;WEBSITE&#39;,
+ 12: &#39;EVENT&#39;,
+ 13: &#39;RECEIPT&#39;,
+ 14: &#39;LEGAL&#39;,
+ 15: &#39;ENTITY&#39;,
+ 16: &#39;PROOF&#39;,
+ 17: &#39;SEAL&#39;,
+ 18: &#39;RETRACTION&#39;,
+ 19: &#39;REVIEW&#39;,
+ 20: &#39;VOID&#39;,
+ 21: &#39;AFFIRMED&#39;,
+ 22: &#39;ACCOUNT&#39;,
+ 23: &#39;OTHER&#39;}
+</pre></div></div>
 </div>
 </section>
 

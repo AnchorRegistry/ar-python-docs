@@ -1,22 +1,22 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>API Reference &mdash; anchorregistry 0.1.3 documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <title>API Reference &mdash; anchorregistry 0.1.6 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=6e0256f3"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -29,11 +29,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> anchorregistry
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            anchorregistry
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -44,12 +48,42 @@
 <li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
 <li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuration</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">API Reference</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#query-functions">Query Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#verification">Verification</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#watermarking">Watermarking</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#analytics">Analytics</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#exceptions">Exceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#query-functions">Query Functions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#anchorregistry.get_by_arid"><code class="docutils literal notranslate"><span class="pre">get_by_arid()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#anchorregistry.get_by_registrant"><code class="docutils literal notranslate"><span class="pre">get_by_registrant()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#anchorregistry.get_by_tree"><code class="docutils literal notranslate"><span class="pre">get_by_tree()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#anchorregistry.get_by_type"><code class="docutils literal notranslate"><span class="pre">get_by_type()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#anchorregistry.get_all"><code class="docutils literal notranslate"><span class="pre">get_all()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#verification">Verification</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#anchorregistry.verify"><code class="docutils literal notranslate"><span class="pre">verify()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#authentication">Authentication</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#anchorregistry.authenticate_anchor"><code class="docutils literal notranslate"><span class="pre">authenticate_anchor()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#anchorregistry.authenticate_tree"><code class="docutils literal notranslate"><span class="pre">authenticate_tree()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#anchorregistry.is_sealed"><code class="docutils literal notranslate"><span class="pre">is_sealed()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#anchorregistry.is_user_initiated"><code class="docutils literal notranslate"><span class="pre">is_user_initiated()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#watermarking">Watermarking</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#anchorregistry.watermark"><code class="docutils literal notranslate"><span class="pre">watermark()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#analytics">Analytics</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#anchorregistry.to_dataframe"><code class="docutils literal notranslate"><span class="pre">to_dataframe()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#configuration">Configuration</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#anchorregistry.configure"><code class="docutils literal notranslate"><span class="pre">configure()</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#exceptions">Exceptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#anchorregistry.exceptions.AnchorNotFoundError"><code class="docutils literal notranslate"><span class="pre">AnchorNotFoundError</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#anchorregistry.exceptions.ConfigurationError"><code class="docutils literal notranslate"><span class="pre">ConfigurationError</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="contract.html">Contract Reference</a></li>
@@ -61,6 +95,7 @@
 <li class="toctree-l1"><a class="reference internal" href="notebooks/recover.html">The Trust Proof</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/watermark.html">Watermarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/dataframe.html">DataFrame Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/authenticate.html">Authenticate — Trustless Initiation Proof</a></li>
 </ul>
 
         </div>
@@ -76,8 +111,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>API Reference</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">API Reference</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/api.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -88,25 +123,400 @@
            <div itemprop="articleBody">
              
   <section id="api-reference">
-<h1>API Reference<a class="headerlink" href="#api-reference" title="Permalink to this heading"></a></h1>
+<h1>API Reference<a class="headerlink" href="#api-reference" title="Link to this heading"></a></h1>
 <p>All public functions are documented below. Docstrings are pulled automatically from the package source.</p>
 <section id="query-functions">
-<h2>Query Functions<a class="headerlink" href="#query-functions" title="Permalink to this heading"></a></h2>
+<h2>Query Functions<a class="headerlink" href="#query-functions" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="anchorregistry.get_by_arid">
+<span class="sig-prename descclassname"><span class="pre">anchorregistry.</span></span><span class="sig-name descname"><span class="pre">get_by_arid</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ar_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rpc_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/anchorregistry/client.html#get_by_arid"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anchorregistry.get_by_arid" title="Link to this definition"></a></dt>
+<dd><p>Fetch a single anchor record by AR-ID.</p>
+<p>Uses the indexed <code class="docutils literal notranslate"><span class="pre">arId</span></code> topic for a targeted single-event query.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ar_id</strong> – The AR-ID to look up (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;AR-2026-Pvdp0W5&quot;</span></code>).</p></li>
+<li><p><strong>rpc_url</strong> – Optional RPC URL override.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Two-level anchor record.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str, Any]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#anchorregistry.exceptions.AnchorNotFoundError" title="anchorregistry.exceptions.AnchorNotFoundError"><strong>AnchorNotFoundError</strong></a> – If the AR-ID does not exist on-chain.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="anchorregistry.get_by_registrant">
+<span class="sig-prename descclassname"><span class="pre">anchorregistry.</span></span><span class="sig-name descname"><span class="pre">get_by_registrant</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">wallet_address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rpc_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/anchorregistry/client.html#get_by_registrant"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anchorregistry.get_by_registrant" title="Link to this definition"></a></dt>
+<dd><p>Fetch all anchors registered by a specific wallet address.</p>
+<p>Uses the indexed <code class="docutils literal notranslate"><span class="pre">registrant</span></code> topic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>wallet_address</strong> – Ethereum wallet address (checksummed or lowercase).</p></li>
+<li><p><strong>rpc_url</strong> – Optional RPC URL override.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of two-level anchor records.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[dict[str, Any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="anchorregistry.get_by_tree">
+<span class="sig-prename descclassname"><span class="pre">anchorregistry.</span></span><span class="sig-name descname"><span class="pre">get_by_tree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">tree_id_plain</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rpc_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/anchorregistry/client.html#get_by_tree"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anchorregistry.get_by_tree" title="Link to this definition"></a></dt>
+<dd><p>Fetch all anchors belonging to a specific tree.</p>
+<p>Uses the indexed <code class="docutils literal notranslate"><span class="pre">treeId</span></code> topic.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>tree_id_plain</strong> – Human-readable treeId string (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;ar-operator-v1&quot;</span></code>).</p></li>
+<li><p><strong>rpc_url</strong> – Optional RPC URL override.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of two-level anchor records.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[dict[str, Any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="anchorregistry.get_by_type">
+<span class="sig-prename descclassname"><span class="pre">anchorregistry.</span></span><span class="sig-name descname"><span class="pre">get_by_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">artifact_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">ArtifactType</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">int</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rpc_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/anchorregistry/client.html#get_by_type"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anchorregistry.get_by_type" title="Link to this definition"></a></dt>
+<dd><p>Fetch all anchors of a specific artifact type.</p>
+<p>Post-filter on decoded <code class="docutils literal notranslate"><span class="pre">artifactType</span></code> from event data.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>artifact_type</strong> – An <code class="docutils literal notranslate"><span class="pre">ArtifactType</span></code> enum member or its integer index.</p></li>
+<li><p><strong>rpc_url</strong> – Optional RPC URL override.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of two-level anchor records matching the type.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[dict[str, Any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="anchorregistry.get_all">
+<span class="sig-prename descclassname"><span class="pre">anchorregistry.</span></span><span class="sig-name descname"><span class="pre">get_all</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">from_block</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_block</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rpc_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/anchorregistry/client.html#get_all"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anchorregistry.get_all" title="Link to this definition"></a></dt>
+<dd><p>Fetch all anchors from the registry.</p>
+<p>Defaults to scanning from <code class="docutils literal notranslate"><span class="pre">DEPLOY_BLOCK</span></code> to latest.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>from_block</strong> – Starting block number. Defaults to <code class="docutils literal notranslate"><span class="pre">DEPLOY_BLOCK</span></code>.</p></li>
+<li><p><strong>to_block</strong> – Ending block number. Defaults to <code class="docutils literal notranslate"><span class="pre">&quot;latest&quot;</span></code>.</p></li>
+<li><p><strong>rpc_url</strong> – Optional RPC URL override.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>List of all two-level anchor records.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>list[dict[str, Any]]</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="verification">
-<h2>Verification<a class="headerlink" href="#verification" title="Permalink to this heading"></a></h2>
+<h2>Verification<a class="headerlink" href="#verification" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="anchorregistry.verify">
+<span class="sig-prename descclassname"><span class="pre">anchorregistry.</span></span><span class="sig-name descname"><span class="pre">verify</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ar_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rpc_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/anchorregistry/client.html#verify"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anchorregistry.verify" title="Link to this definition"></a></dt>
+<dd><p>Fetch anchor record and optionally verify file integrity.</p>
+<p>If <em>file_path</em> is provided, computes SHA256 of the file and compares
+against <code class="docutils literal notranslate"><span class="pre">manifest_hash</span></code> on-chain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ar_id</strong> – The AR-ID to verify.</p></li>
+<li><p><strong>file_path</strong> – Optional local file path for SHA256 integrity check.</p></li>
+<li><p><strong>rpc_url</strong> – Optional RPC URL override.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Record dict plus <code class="docutils literal notranslate"><span class="pre">verified</span></code> (bool) and <code class="docutils literal notranslate"><span class="pre">hash_match</span></code> (bool) keys.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str, Any]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#anchorregistry.exceptions.AnchorNotFoundError" title="anchorregistry.exceptions.AnchorNotFoundError"><strong>AnchorNotFoundError</strong></a> – If the AR-ID does not exist on-chain.</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="authentication">
+<h2>Authentication<a class="headerlink" href="#authentication" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="anchorregistry.authenticate_anchor">
+<span class="sig-prename descclassname"><span class="pre">anchorregistry.</span></span><span class="sig-name descname"><span class="pre">authenticate_anchor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ownership_token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ar_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rpc_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/anchorregistry/client.html#authenticate_anchor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anchorregistry.authenticate_anchor" title="Link to this definition"></a></dt>
+<dd><p>Authenticate a single anchor by verifying its tokenCommitment on-chain.</p>
+<p>Computes <code class="docutils literal notranslate"><span class="pre">keccak256(K</span> <span class="pre">||</span> <span class="pre">arId)</span></code> (paper spec Section 4.2) and compares
+the result against the <code class="docutils literal notranslate"><span class="pre">token_commitment</span></code> stored in the on-chain
+<code class="docutils literal notranslate"><span class="pre">Anchored</span></code> event. Governance anchors (VOID, REVIEW, AFFIRMED, RETRACTION)
+carry <code class="docutils literal notranslate"><span class="pre">bytes32(0)</span></code> and are returned as <code class="docutils literal notranslate"><span class="pre">authenticated:</span> <span class="pre">False</span></code> immediately.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ownership_token</strong> – Ownership token K = keccak256(salt), salt = 32 uniform random bytes.
+Stored as 0x-prefixed 64-char hex string (bytes32).
+Never transmitted to AnchorRegistry — known only to the token holder.</p></li>
+<li><p><strong>ar_id</strong> – The AR-ID to authenticate (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;AR-2026-Pvdp0W5&quot;</span></code>).</p></li>
+<li><p><strong>rpc_url</strong> – Optional RPC URL override.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Result dict with keys:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">authenticated</span></code> — bool: True if keccak256 proof matches on-chain commitment.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ar_id</span></code> — str: the AR-ID that was checked.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">token_commitment</span></code> — str: on-chain commitment (<code class="docutils literal notranslate"><span class="pre">0x</span></code>-prefixed bytes32 hex).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is_user_initiated</span></code> — bool: False for governance anchors (bytes32(0)).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">verified</span></code> — bool: same as <code class="docutils literal notranslate"><span class="pre">authenticated</span></code>.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str, Any]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#anchorregistry.exceptions.AnchorNotFoundError" title="anchorregistry.exceptions.AnchorNotFoundError"><strong>AnchorNotFoundError</strong></a> – If the AR-ID does not exist on-chain.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">anchorregistry</span><span class="w"> </span><span class="kn">import</span> <span class="n">configure</span><span class="p">,</span> <span class="n">authenticate_anchor</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">configure</span><span class="p">(</span><span class="n">network</span><span class="o">=</span><span class="s2">&quot;sepolia&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">authenticate_anchor</span><span class="p">(</span><span class="s2">&quot;0x1a2b3c4d...&quot;</span><span class="p">,</span> <span class="s2">&quot;AR-2026-Pvdp0W5&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;authenticated&quot;</span><span class="p">]</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="anchorregistry.authenticate_tree">
+<span class="sig-prename descclassname"><span class="pre">anchorregistry.</span></span><span class="sig-name descname"><span class="pre">authenticate_tree</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ownership_token</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">root_ar_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rpc_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/anchorregistry/client.html#authenticate_tree"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anchorregistry.authenticate_tree" title="Link to this definition"></a></dt>
+<dd><p>Authenticate a full tree by verifying ownership and all anchor commitments.</p>
+<p>If the tree is sealed, returns immediately with sealed status — the tree
+is authentic and complete, no further verification needed.</p>
+<p>Two-layer verification:</p>
+<p><strong>Layer 1 — Tree ownership:</strong>
+Computes <code class="docutils literal notranslate"><span class="pre">keccak256(K</span> <span class="pre">||</span> <span class="pre">rootArId)</span></code> (paper spec Section 4.2) and compares
+against <code class="docutils literal notranslate"><span class="pre">record[&quot;tree_id&quot;]</span></code>. Returns <code class="docutils literal notranslate"><span class="pre">authenticated:</span> <span class="pre">False</span></code> immediately
+on failure.</p>
+<p><strong>Layer 2 — Per-anchor initiation:</strong>
+Calls <code class="docutils literal notranslate"><span class="pre">get_by_tree()</span></code> and runs <code class="docutils literal notranslate"><span class="pre">authenticate_anchor()</span></code> for each
+user-initiated anchor. Governance anchors (bytes32(0) commitment) are
+counted separately and skipped from verification.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ownership_token</strong> – Ownership token K = keccak256(salt), salt = 32 uniform random bytes.
+Stored as 0x-prefixed 64-char hex string (bytes32).</p></li>
+<li><p><strong>root_ar_id</strong> – AR-ID of the tree root anchor.</p></li>
+<li><p><strong>rpc_url</strong> – Optional RPC URL override.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Result dict with keys:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">authenticated</span></code> — bool: True if Layer 1 passes and <code class="docutils literal notranslate"><span class="pre">anchors_failed</span> <span class="pre">==</span> <span class="pre">0</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">sealed</span></code> — bool: True if the tree is sealed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">continuation</span></code> — str: new tree root (if sealed with continuation).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tree_id</span></code> — str: human-readable treeId from the root anchor.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">root_ar_id</span></code> — str: the root AR-ID that was checked.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">anchor_count</span></code> — int: total anchors in the tree.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">anchors_verified</span></code> — int: user-initiated anchors whose commitment matched.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">anchors_failed</span></code> — int: user-initiated anchors whose commitment did not match.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">governance_count</span></code> — int: governance anchors skipped (bytes32(0)).</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str, Any]</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#anchorregistry.exceptions.AnchorNotFoundError" title="anchorregistry.exceptions.AnchorNotFoundError"><strong>AnchorNotFoundError</strong></a> – If <code class="docutils literal notranslate"><span class="pre">root_ar_id</span></code> does not exist on-chain.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">anchorregistry</span><span class="w"> </span><span class="kn">import</span> <span class="n">configure</span><span class="p">,</span> <span class="n">authenticate_tree</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">configure</span><span class="p">(</span><span class="n">network</span><span class="o">=</span><span class="s2">&quot;sepolia&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span> <span class="o">=</span> <span class="n">authenticate_tree</span><span class="p">(</span><span class="s2">&quot;0x1a2b3c4d...&quot;</span><span class="p">,</span> <span class="s2">&quot;AR-2026-Pvdp0W5&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">result</span><span class="p">[</span><span class="s2">&quot;authenticated&quot;</span><span class="p">]</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="anchorregistry.is_sealed">
+<span class="sig-prename descclassname"><span class="pre">anchorregistry.</span></span><span class="sig-name descname"><span class="pre">is_sealed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">root_ar_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rpc_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></span><a class="reference internal" href="_modules/anchorregistry/client.html#is_sealed"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anchorregistry.is_sealed" title="Link to this definition"></a></dt>
+<dd><p>Check if a tree root has been sealed on-chain.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>root_ar_id</strong> – AR-ID of the tree root anchor.</p></li>
+<li><p><strong>rpc_url</strong> – Optional RPC URL override.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><p>Result dict with keys:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">sealed</span></code> — bool: True if the tree root is sealed.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">continuation</span></code> — str: new tree root if set, empty string otherwise.</p></li>
+</ul>
+</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>dict[str, Any]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="anchorregistry.is_user_initiated">
+<span class="sig-prename descclassname"><span class="pre">anchorregistry.</span></span><span class="sig-name descname"><span class="pre">is_user_initiated</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">record</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool</span></span></span><a class="reference internal" href="_modules/anchorregistry/utils.html#is_user_initiated"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anchorregistry.is_user_initiated" title="Link to this definition"></a></dt>
+<dd><p>Return True if the anchor was initiated by the token holder.</p>
+<p>An anchor is user-initiated when its <code class="docutils literal notranslate"><span class="pre">token_commitment</span></code> is non-zero.
+Governance anchors (VOID, REVIEW, AFFIRMED, RETRACTION) carry
+<code class="docutils literal notranslate"><span class="pre">bytes32(0)</span></code> as a sentinel — enforced by the contract.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>record</strong> – Two-level anchor record dict as returned by any query function.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p><code class="docutils literal notranslate"><span class="pre">True</span></code> if user-initiated (non-zero tokenCommitment).
+<code class="docutils literal notranslate"><span class="pre">False</span></code> for AR governance actions.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">anchorregistry</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_by_arid</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span><span class="w"> </span><span class="nn">anchorregistry.utils</span><span class="w"> </span><span class="kn">import</span> <span class="n">is_user_initiated</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">record</span> <span class="o">=</span> <span class="n">get_by_arid</span><span class="p">(</span><span class="s2">&quot;AR-2026-Pvdp0W5&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">is_user_initiated</span><span class="p">(</span><span class="n">record</span><span class="p">)</span>
+<span class="go">True</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </section>
 <section id="watermarking">
-<h2>Watermarking<a class="headerlink" href="#watermarking" title="Permalink to this heading"></a></h2>
+<h2>Watermarking<a class="headerlink" href="#watermarking" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="anchorregistry.watermark">
+<span class="sig-prename descclassname"><span class="pre">anchorregistry.</span></span><span class="sig-name descname"><span class="pre">watermark</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ar_id</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">artifact_type</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rpc_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="_modules/anchorregistry/client.html#watermark"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anchorregistry.watermark" title="Link to this definition"></a></dt>
+<dd><p>Generate the correct SPDX-Anchor or DAPX-Anchor embedded tag.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">artifact_type</span> <span class="pre">==</span> <span class="pre">&quot;CODE&quot;</span></code> → <code class="docutils literal notranslate"><span class="pre">SPDX-Anchor:</span> <span class="pre">anchorregistry.ai/{ar_id}</span></code></p></li>
+<li><p>All other types → <code class="docutils literal notranslate"><span class="pre">DAPX-Anchor:</span> <span class="pre">anchorregistry.ai/{ar_id}</span></code></p></li>
+<li><p>If <em>artifact_type</em> is <code class="docutils literal notranslate"><span class="pre">None</span></code>, resolves via <code class="docutils literal notranslate"><span class="pre">get_by_arid()</span></code> automatically.</p></li>
+</ul>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ar_id</strong> – The AR-ID to watermark.</p></li>
+<li><p><strong>artifact_type</strong> – Optional type name string (e.g. <code class="docutils literal notranslate"><span class="pre">&quot;CODE&quot;</span></code>). If <code class="docutils literal notranslate"><span class="pre">None</span></code>, looked up
+on-chain.</p></li>
+<li><p><strong>rpc_url</strong> – Optional RPC URL override.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The watermark line, e.g. <code class="docutils literal notranslate"><span class="pre">&quot;SPDX-Anchor:</span> <span class="pre">anchorregistry.ai/AR-2026-Pvdp0W5&quot;</span></code>.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="analytics">
-<h2>Analytics<a class="headerlink" href="#analytics" title="Permalink to this heading"></a></h2>
+<h2>Analytics<a class="headerlink" href="#analytics" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="anchorregistry.to_dataframe">
+<span class="sig-prename descclassname"><span class="pre">anchorregistry.</span></span><span class="sig-name descname"><span class="pre">to_dataframe</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">records</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">list</span><span class="p"><span class="pre">[</span></span><span class="pre">dict</span><span class="p"><span class="pre">[</span></span><span class="pre">str</span><span class="p"><span class="pre">,</span></span><span class="w"> </span><span class="pre">Any</span><span class="p"><span class="pre">]</span></span><span class="p"><span class="pre">]</span></span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">Any</span></span></span><a class="reference internal" href="_modules/anchorregistry/utils.html#to_dataframe"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anchorregistry.to_dataframe" title="Link to this definition"></a></dt>
+<dd><p>Flatten anchor records into a pandas DataFrame.</p>
+<p>Type-specific fields in <code class="docutils literal notranslate"><span class="pre">data</span></code> are flattened with
+<code class="docutils literal notranslate"><span class="pre">{type_name}_{field_name}</span></code> column names to avoid semantic collision.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>records</strong> – List of two-level anchor record dicts.</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Flat DataFrame suitable for analytics.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>ImportError</strong> – If pandas is not installed.</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="configuration">
-<h2>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h2>
+<h2>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="anchorregistry.configure">
+<span class="sig-prename descclassname"><span class="pre">anchorregistry.</span></span><span class="sig-name descname"><span class="pre">configure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">contract_address</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">rpc_url</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span><span class="w"> </span><span class="p"><span class="pre">|</span></span><span class="w"> </span><span class="pre">None</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">network</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">'base'</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="reference internal" href="_modules/anchorregistry/config.html#configure"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anchorregistry.configure" title="Link to this definition"></a></dt>
+<dd><p>Configure the active network, contract address, and RPC endpoint.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>contract_address</strong> – Explicit contract address. Overrides network preset and env var.</p></li>
+<li><p><strong>rpc_url</strong> – Explicit RPC URL. Overrides network preset and env var.</p></li>
+<li><p><strong>network</strong> – Network name — <code class="docutils literal notranslate"><span class="pre">&quot;base&quot;</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;sepolia&quot;</span></code>. Defaults to <code class="docutils literal notranslate"><span class="pre">&quot;base&quot;</span></code>.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference internal" href="#anchorregistry.exceptions.ConfigurationError" title="anchorregistry.exceptions.ConfigurationError"><strong>ConfigurationError</strong></a> – If <em>network</em> is not a recognised preset name.</p>
+</dd>
+</dl>
+</dd></dl>
+
 </section>
 <section id="exceptions">
-<h2>Exceptions<a class="headerlink" href="#exceptions" title="Permalink to this heading"></a></h2>
+<h2>Exceptions<a class="headerlink" href="#exceptions" title="Link to this heading"></a></h2>
+<dl class="py exception">
+<dt class="sig sig-object py" id="anchorregistry.exceptions.AnchorNotFoundError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">anchorregistry.exceptions.</span></span><span class="sig-name descname"><span class="pre">AnchorNotFoundError</span></span><a class="reference internal" href="_modules/anchorregistry/exceptions.html#AnchorNotFoundError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anchorregistry.exceptions.AnchorNotFoundError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Raised when an AR-ID does not exist on-chain.</p>
+</dd></dl>
+
+<dl class="py exception">
+<dt class="sig sig-object py" id="anchorregistry.exceptions.ConfigurationError">
+<span class="property"><span class="k"><span class="pre">exception</span></span><span class="w"> </span></span><span class="sig-prename descclassname"><span class="pre">anchorregistry.exceptions.</span></span><span class="sig-name descname"><span class="pre">ConfigurationError</span></span><a class="reference internal" href="_modules/anchorregistry/exceptions.html#ConfigurationError"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#anchorregistry.exceptions.ConfigurationError" title="Link to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></p>
+<p>Raised when the package is used before a contract address is available.</p>
+</dd></dl>
+
 </section>
 </section>
 

@@ -1,0 +1,237 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Authenticate — Trustless Initiation Proof &mdash; anchorregistry 0.1.6 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=6e0256f3"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="DataFrame Analytics" href="dataframe.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            anchorregistry
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Documentation</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../configuration.html">Configuration</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../api.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contract.html">Contract Reference</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Interactive Notebooks</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="quickstart.html">Quickstart</a></li>
+<li class="toctree-l1"><a class="reference internal" href="querying.html">Querying</a></li>
+<li class="toctree-l1"><a class="reference internal" href="recover.html">The Trust Proof</a></li>
+<li class="toctree-l1"><a class="reference internal" href="watermark.html">Watermarking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dataframe.html">DataFrame Analytics</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Authenticate — Trustless Initiation Proof</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">anchorregistry</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Authenticate — Trustless Initiation Proof</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/notebooks/authenticate.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="Authenticate-—-Trustless-Initiation-Proof">
+<h1>Authenticate — Trustless Initiation Proof<a class="headerlink" href="#Authenticate-—-Trustless-Initiation-Proof" title="Link to this heading"></a></h1>
+<blockquote>
+<div><p>These examples run against Sepolia testnet (<code class="docutils literal notranslate"><span class="pre">network=&quot;sepolia&quot;</span></code>). To run against Base mainnet: replace <code class="docutils literal notranslate"><span class="pre">configure(network=&quot;sepolia&quot;)</span></code> with <code class="docutils literal notranslate"><span class="pre">configure(network=&quot;base&quot;)</span></code>. All function calls, record structures, and output shapes are identical across networks.</p>
+</div></blockquote>
+<p>Every content anchor in AnchorRegistry carries a <code class="docutils literal notranslate"><span class="pre">tokenCommitment</span></code> — a <code class="docutils literal notranslate"><span class="pre">keccak256(K</span> <span class="pre">||</span> <span class="pre">arId)</span></code> hash stored immutably on Ethereum.</p>
+<p>The ownership token <code class="docutils literal notranslate"><span class="pre">K</span> <span class="pre">=</span> <span class="pre">keccak256(salt)</span></code> is generated in the browser at registration time from 32 uniform random bytes and <strong>never transmitted</strong> to AnchorRegistry servers. Only the token holder can produce the pre-image. This makes the proof trustless: no AnchorRegistry infrastructure needed, no trust required.</p>
+<p>Two verification levels:</p>
+<ul class="simple">
+<li><p><strong>``authenticate_anchor``</strong> — verify a single anchor was initiated by the token holder</p></li>
+<li><p><strong>``authenticate_tree``</strong> — verify tree ownership (Layer 1) + every anchor in the tree (Layer 2)</p></li>
+</ul>
+<div class="nbinput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Cell 1 — setup
+from anchorregistry import configure, authenticate_tree, authenticate_anchor
+configure(network=&quot;sepolia&quot;, rpc_url=&quot;https://ethereum-sepolia-rpc.publicnode.com&quot;)
+</pre></div>
+</div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Cell 2 — authenticate a single anchor
+# Replace ownership_token and ar_id with your own values
+result = authenticate_anchor(
+    ownership_token=&quot;0x55bf4cc35a28a41042e565ea33181cc7a28b0be51f191472a82ea1d6ac3e392e&quot;,
+    ar_id=&quot;AR-2026-j1BgLvP&quot;
+)
+result
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;authenticated&#39;: True,
+ &#39;ar_id&#39;: &#39;AR-2026-j1BgLvP&#39;,
+ &#39;token_commitment&#39;: &#39;0x6b7bbb0c4a7a25a3b3fb6dd9b719e36292057adc8b9f411e15de0a1e90efa215&#39;,
+ &#39;is_user_initiated&#39;: True,
+ &#39;verified&#39;: True}
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Cell 3 — authenticate full tree
+# Layer 1: keccak256(K || rootArId) == treeId
+# Layer 2: verify every user-initiated anchor in the tree
+result = authenticate_tree(
+    ownership_token=&quot;0x55bf4cc35a28a41042e565ea33181cc7a28b0be51f191472a82ea1d6ac3e392e&quot;,
+    root_ar_id=&quot;AR-2026-j1BgLvP&quot;
+)
+result
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;authenticated&#39;: True,
+ &#39;sealed&#39;: False,
+ &#39;continuation&#39;: &#39;&#39;,
+ &#39;tree_id&#39;: &#39;0x6b7bbb0c4a7a25a3b3fb6dd9b719e36292057adc8b9f411e15de0a1e90efa215&#39;,
+ &#39;root_ar_id&#39;: &#39;AR-2026-j1BgLvP&#39;,
+ &#39;anchor_count&#39;: 1,
+ &#39;anchors_verified&#39;: 1,
+ &#39;anchors_failed&#39;: 0,
+ &#39;governance_count&#39;: 0}
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Cell 4 — cron job audit pattern
+# Run this on a schedule to continuously verify your tree hasn&#39;t been tampered with
+import os
+result = authenticate_tree(
+    ownership_token=os.environ.get(&quot;ANCHOR_OWNERSHIP_TOKEN&quot;, &quot;0x81fcaa4a0ec65271a4afc92e9ce3a2e4dd7a3c00c9d0d67b41bf417f74e1cfb8&quot;),
+    root_ar_id=&quot;AR-2026-j1BgLvP&quot;
+)
+if not result[&quot;authenticated&quot;]:
+    print(f&quot;AUDIT FAILED — {result[&#39;anchors_failed&#39;]} anchors unverified&quot;)
+else:
+    print(f&quot;AUDIT PASSED — {result[&#39;anchors_verified&#39;]} anchors verified&quot;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+AUDIT FAILED — 0 anchors unverified
+</pre></div></div>
+</div>
+<hr class="docutils" />
+<p>The verification above ran entirely against the Ethereum blockchain. No AnchorRegistry servers involved.</p>
+<p><strong>One ownership token proves the entire tree is yours.</strong></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>treeId          = keccak256(K || rootArId)    → tree ownership
+tokenCommitment = keccak256(K || childArId)   → per-anchor initiation
+</pre></div>
+</div>
+<p>Same ownership token <code class="docutils literal notranslate"><span class="pre">K</span></code>. Same construction. One key proves everything.</p>
+<p>To dispute a tokenCommitment: produce the ownership token <code class="docutils literal notranslate"><span class="pre">K</span></code> such that <code class="docutils literal notranslate"><span class="pre">keccak256(K</span> <span class="pre">||</span> <span class="pre">arId)</span> <span class="pre">==</span> <span class="pre">tokenCommitment</span></code>. Producing this token proves you initiated the registration. The proof is on Ethereum — permanent and independent of AnchorRegistry infrastructure.</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="dataframe.html" class="btn btn-neutral float-left" title="DataFrame Analytics" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026, Ian Moore.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

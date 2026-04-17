@@ -1,25 +1,25 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Trust Proof &mdash; anchorregistry 0.1.3 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <title>The Trust Proof &mdash; anchorregistry 0.1.6 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=6e0256f3"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -32,11 +32,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> anchorregistry
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            anchorregistry
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -56,6 +60,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">The Trust Proof</a></li>
 <li class="toctree-l1"><a class="reference internal" href="watermark.html">Watermarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dataframe.html">DataFrame Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authenticate.html">Authenticate — Trustless Initiation Proof</a></li>
 </ul>
 
         </div>
@@ -71,8 +76,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>The Trust Proof</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">The Trust Proof</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/notebooks/recover.ipynb.txt" rel="nofollow"> View page source</a>
       </li>
@@ -83,7 +88,7 @@
            <div itemprop="articleBody">
              
   <section id="The-Trust-Proof">
-<h1>The Trust Proof<a class="headerlink" href="#The-Trust-Proof" title="Permalink to this heading"></a></h1>
+<h1>The Trust Proof<a class="headerlink" href="#The-Trust-Proof" title="Link to this heading"></a></h1>
 <p>This notebook reconstructs the entire AnchorRegistry from on-chain events alone.</p>
 <blockquote>
 <div><p><strong>No AnchorRegistry API. No Supabase. No account.</strong> Just an RPC endpoint and the contract address. If AnchorRegistry’s servers disappeared tomorrow, this notebook would still work.</p>
@@ -91,89 +96,326 @@
 <blockquote>
 <div><p>These examples run against Sepolia testnet (<code class="docutils literal notranslate"><span class="pre">network=&quot;sepolia&quot;</span></code>). To run against Base mainnet: replace <code class="docutils literal notranslate"><span class="pre">configure(network=&quot;sepolia&quot;)</span></code> with <code class="docutils literal notranslate"><span class="pre">configure(network=&quot;base&quot;)</span></code>. All function calls, record structures, and output shapes are identical across networks.</p>
 </div></blockquote>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cell 1 — what you need</span>
-<span class="c1"># - An Ethereum RPC endpoint (Infura, Alchemy, or your own node)</span>
-<span class="c1"># - The contract address (public on Etherscan forever)</span>
-<span class="c1"># - The deploy block number</span>
-<span class="c1"># Nothing else.</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Cell 1 — what you need
+# - An Ethereum RPC endpoint (Infura, Alchemy, or your own node)
+# - The contract address (public on Etherscan forever)
+# - The deploy block number
+# Nothing else.
 
-<span class="kn">from</span> <span class="nn">anchorregistry</span> <span class="kn">import</span> <span class="n">configure</span><span class="p">,</span> <span class="n">get_all</span><span class="p">,</span> <span class="n">to_dataframe</span>
-<span class="kn">from</span> <span class="nn">anchorregistry.constants</span> <span class="kn">import</span> <span class="n">CONTRACT_ADDRESS</span><span class="p">,</span> <span class="n">DEPLOY_BLOCK</span>
+from anchorregistry import configure, get_all, to_dataframe
+from anchorregistry.constants import CONTRACT_ADDRESS, DEPLOY_BLOCK
 
-<span class="n">configure</span><span class="p">(</span><span class="n">network</span><span class="o">=</span><span class="s2">&quot;sepolia&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Contract:            </span><span class="si">{</span><span class="n">CONTRACT_ADDRESS</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Scanning from block: </span><span class="si">{</span><span class="n">DEPLOY_BLOCK</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+configure(network=&quot;sepolia&quot;, rpc_url=&quot;https://ethereum-sepolia-rpc.publicnode.com&quot;)
+print(f&quot;Contract:            {CONTRACT_ADDRESS}&quot;)
+print(f&quot;Scanning from block: {DEPLOY_BLOCK}&quot;)
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Contract:            TBD
+Scanning from block: None
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cell 2 — reconstruct the full registry</span>
-<span class="n">records</span> <span class="o">=</span> <span class="n">get_all</span><span class="p">()</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Total anchors recovered: </span><span class="si">{</span><span class="nb">len</span><span class="p">(</span><span class="n">records</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cell 3 — inspect a single record (raw dict)</span>
-<span class="n">records</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cell 4 — load into DataFrame</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">to_dataframe</span><span class="p">(</span><span class="n">records</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Cell 2 — reconstruct the full registry
+records = get_all()
+print(f&quot;Total anchors recovered: {len(records)}&quot;)
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Total anchors recovered: 13
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cell 5 — explore the registry by artifact type</span>
-<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;artifact_type_name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Cell 3 — inspect a single record (raw dict)
+records[0]
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cell 6 — reconstruct a specific tree</span>
-<span class="kn">from</span> <span class="nn">anchorregistry</span> <span class="kn">import</span> <span class="n">get_by_tree</span>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;ar_id&#39;: &#39;AR-2026-86pNJz1&#39;,
+ &#39;registered&#39;: True,
+ &#39;artifact_type_index&#39;: 1,
+ &#39;artifact_type_name&#39;: &#39;RESEARCH&#39;,
+ &#39;tx&#39;: &#39;0x63668f4241028ddc082e9eaa1ea7d71210c0cf480d57ed880ec26505d2a0bc82&#39;,
+ &#39;block&#39;: 10606147,
+ &#39;registrant&#39;: &#39;0xc7a7afde1177fbf0bb265ea5a616d1b8d7ed8c44&#39;,
+ &#39;manifest_hash&#39;: &#39;f6861bf5d3ece463634210245d2a224b90c0f19d35dc6cf441ea9b415c7aa0d5&#39;,
+ &#39;parent_ar_id&#39;: &#39;&#39;,
+ &#39;descriptor&#39;: &#39;&#39;,
+ &#39;title&#39;: &#39;test research&#39;,
+ &#39;author&#39;: &#39;&#39;,
+ &#39;tree_id&#39;: &#39;0x56d1414373fca0dc195cd48040fbd57f177eddb10ca1266b02e9bc462b6aa672&#39;,
+ &#39;token_commitment&#39;: &#39;0x56d1414373fca0dc195cd48040fbd57f177eddb10ca1266b02e9bc462b6aa672&#39;,
+ &#39;data&#39;: {&#39;doi&#39;: &#39;&#39;,
+  &#39;institution&#39;: &#39;&#39;,
+  &#39;co_authors&#39;: &#39;&#39;,
+  &#39;url&#39;: &#39;https://arxiv.org/&#39;}}
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Cell 4 — load into DataFrame
+df = to_dataframe(records)
+df.head()
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="n">tree</span> <span class="o">=</span> <span class="n">get_by_tree</span><span class="p">(</span><span class="s2">&quot;ar-operator-v1&quot;</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">anchor</span> <span class="ow">in</span> <span class="n">tree</span><span class="p">:</span>
-    <span class="n">indent</span> <span class="o">=</span> <span class="s2">&quot;  &quot;</span> <span class="o">*</span> <span class="p">(</span><span class="mi">1</span> <span class="k">if</span> <span class="n">anchor</span><span class="p">[</span><span class="s2">&quot;parent_ar_id&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="mi">0</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">indent</span><span class="si">}{</span><span class="n">anchor</span><span class="p">[</span><span class="s1">&#39;ar_id&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> — </span><span class="si">{</span><span class="n">anchor</span><span class="p">[</span><span class="s1">&#39;artifact_type_name&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2"> — </span><span class="si">{</span><span class="n">anchor</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ar_id</th>
+      <th>registered</th>
+      <th>artifact_type_index</th>
+      <th>artifact_type_name</th>
+      <th>tx</th>
+      <th>block</th>
+      <th>registrant</th>
+      <th>manifest_hash</th>
+      <th>parent_ar_id</th>
+      <th>descriptor</th>
+      <th>...</th>
+      <th>data_data_version</th>
+      <th>data_format</th>
+      <th>data_row_count</th>
+      <th>data_schema_url</th>
+      <th>data_url</th>
+      <th>model_model_version</th>
+      <th>model_architecture</th>
+      <th>model_parameters</th>
+      <th>model_training_dataset</th>
+      <th>model_url</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AR-2026-86pNJz1</td>
+      <td>True</td>
+      <td>1</td>
+      <td>RESEARCH</td>
+      <td>0x63668f4241028ddc082e9eaa1ea7d71210c0cf480d57...</td>
+      <td>10606147</td>
+      <td>0xc7a7afde1177fbf0bb265ea5a616d1b8d7ed8c44</td>
+      <td>f6861bf5d3ece463634210245d2a224b90c0f19d35dc6c...</td>
+      <td></td>
+      <td></td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AR-2026-yPZBeoP</td>
+      <td>True</td>
+      <td>1</td>
+      <td>RESEARCH</td>
+      <td>0x0e22ab2f233b3f0dedc34a698618467751f14eb6d791...</td>
+      <td>10606149</td>
+      <td>0xc7a7afde1177fbf0bb265ea5a616d1b8d7ed8c44</td>
+      <td>f6861bf5d3ece463634210245d2a224b90c0f19d35dc6c...</td>
+      <td></td>
+      <td></td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AR-2026-A5kgmm5</td>
+      <td>True</td>
+      <td>1</td>
+      <td>RESEARCH</td>
+      <td>0x6450067e475589619bf0c0182d4c07a747f997f30417...</td>
+      <td>10606190</td>
+      <td>0xc7a7afde1177fbf0bb265ea5a616d1b8d7ed8c44</td>
+      <td>c40df05936147951ac7493141ebba357fbd800befc2690...</td>
+      <td></td>
+      <td></td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AR-2026-L5RMpQ6</td>
+      <td>True</td>
+      <td>1</td>
+      <td>RESEARCH</td>
+      <td>0x0477357cfe4eac7d8be16924b210a6441dfa4a9aa428...</td>
+      <td>10606193</td>
+      <td>0xc7a7afde1177fbf0bb265ea5a616d1b8d7ed8c44</td>
+      <td>c40df05936147951ac7493141ebba357fbd800befc2690...</td>
+      <td></td>
+      <td></td>
+      <td>...</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AR-2026-o5D0Ky5</td>
+      <td>True</td>
+      <td>2</td>
+      <td>DATA</td>
+      <td>0xa04958e6c63a2846604476ee2dcc97633d18fb5997e3...</td>
+      <td>10606225</td>
+      <td>0xc7a7afde1177fbf0bb265ea5a616d1b8d7ed8c44</td>
+      <td>6fa7e60680f54ab39a9a50657199433743832dca500863...</td>
+      <td>AR-2026-L5RMpQ6</td>
+      <td></td>
+      <td>...</td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td>https://arxiv.org/</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+<p>5 rows × 28 columns</p>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Cell 5 — explore the registry by artifact type
+df.groupby(&quot;artifact_type_name&quot;).size().sort_values(ascending=False)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+artifact_type_name
+RESEARCH    10
+DATA         2
+MODEL        1
+dtype: int64
+</pre></div></div>
 </div>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[9]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cell 7 — verify a specific artifact</span>
-<span class="kn">from</span> <span class="nn">anchorregistry</span> <span class="kn">import</span> <span class="n">verify</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Cell 6 — reconstruct a specific tree
+from anchorregistry import get_by_tree
 
-<span class="n">result</span> <span class="o">=</span> <span class="n">verify</span><span class="p">(</span><span class="s2">&quot;AR-2026-x1llnO1&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Registered:    </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;registered&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Manifest hash: </span><span class="si">{</span><span class="n">result</span><span class="p">[</span><span class="s1">&#39;manifest_hash&#39;</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+tree = get_by_tree(&quot;7ec2e3117b73605f7eb339fa9d550d08eec94cc5003a8efe61b9075eb88fa7bb&quot;)
+for anchor in tree:
+    indent = &quot;  &quot; * (1 if anchor[&quot;parent_ar_id&quot;] else 0)
+    print(f&quot;{indent}{anchor[&#39;ar_id&#39;]} — {anchor[&#39;artifact_type_name&#39;]} — {anchor[&#39;title&#39;]}&quot;)
 </pre></div>
 </div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[7]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Cell 7 — verify a specific artifact
+from anchorregistry import verify
+
+result = verify(&quot;AR-2026-j1BgLvP&quot;)
+print(f&quot;Registered:    {result[&#39;registered&#39;]}&quot;)
+print(f&quot;Manifest hash: {result[&#39;manifest_hash&#39;]}&quot;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Registered:    True
+Manifest hash: 1183500c69149115de1508e5679877e505eaa6c056a299a5db8085c7f54514ee
+</pre></div></div>
 </div>
 <hr class="docutils" />
 <p>The output above was generated entirely from public Ethereum event logs.</p>

@@ -17,9 +17,9 @@ Deployed Contract
      - TBD
      - TBD
    * - Sepolia testnet
-     - ``0x9dAb9f5B754f8C56B5F7BAd3E92A8bDe7317AD29``
-     - 10562312
-     - `View on Etherscan <https://sepolia.etherscan.io/address/0x9dAb9f5B754f8C56B5F7BAd3E92A8bDe7317AD29>`_
+     - ``0xE772B7f4eC4a92109b8b892Add205ede7c850DBa``
+     - 10575629
+     - `View on Etherscan <https://sepolia.etherscan.io/address/0xE772B7f4eC4a92109b8b892Add205ede7c850DBa>`_
 
 Anchored Event
 --------------
@@ -31,7 +31,7 @@ The ``Anchored`` event is emitted once per registration. It is the sole source o
    event Anchored(
        string  indexed arId,           // AR-ID (keccak256 indexed)
        address indexed registrant,     // wallet that called anchor()
-       uint8           artifactType,   // ArtifactType enum value (0–22)
+       uint8           artifactType,   // ArtifactType enum value (0–23)
        string          arIdPlain,      // AR-ID plain text (not indexed)
        string          descriptor,     // short descriptor / subtitle
        string          title,          // artifact title
@@ -39,7 +39,8 @@ The ``Anchored`` event is emitted once per registration. It is the sole source o
        string          manifestHash,   // content hash (SHA-256 or IPFS CID)
        string          parentArId,     // parent AR-ID ("" if root)
        string  indexed treeId,         // tree identifier (keccak256 indexed)
-       string          treeIdPlain     // tree identifier plain text
+       string          treeIdPlain,    // tree identifier plain text
+       bytes32         tokenCommitment // keccak256(K || arId), bytes32(0) for governance
    );
 
 **Field descriptions:**
@@ -84,6 +85,24 @@ The ``Anchored`` event is emitted once per registration. It is the sole source o
    * - ``treeIdPlain``
      - ``string``
      - Human-readable tree identifier. Identical to ``treeId`` but not indexed.
+   * - ``tokenCommitment``
+     - ``bytes32``
+     - Ownership proof: ``keccak256(K || arId)`` for user-initiated anchors, ``bytes32(0)`` for governance anchors. ``K`` is the ownership token known only to the registrant.
+
+Sealed Event
+------------
+
+The ``Sealed`` event is emitted when a tree root is sealed via ``registerSeal``. A sealed tree is authentic and complete — no new anchors may be appended. AR governance (VOID, REVIEW, AFFIRMED) can still target anchors within sealed trees.
+
+.. code-block:: solidity
+
+   event Sealed(
+       string  indexed arId,            // root AR-ID being sealed
+       string          newTreeRoot,      // optional continuation pointer
+       string          reason,           // human-readable reason
+       uint256         sealedAtBlock,    // block number of seal
+       bytes32         tokenCommitment   // H(K || C_seal) — always non-zero
+   );
 
 READ_ABI
 --------
@@ -110,7 +129,37 @@ The minimal ABI used by ``anchorregistry`` to read from the contract. This is th
                {"indexed": False, "internalType": "string",            "name": "parentArId",   "type": "string"},
                {"indexed": True,  "internalType": "string",            "name": "treeId",       "type": "string"},
                {"indexed": False, "internalType": "string",            "name": "treeIdPlain",  "type": "string"},
+               {"indexed": False, "internalType": "bytes32",           "name": "tokenCommitment", "type": "bytes32"},
            ],
+       },
+       # Sealed event
+       {
+           "anonymous": False,
+           "name": "Sealed",
+           "type": "event",
+           "inputs": [
+               {"indexed": True,  "internalType": "string",  "name": "arId",            "type": "string"},
+               {"indexed": False, "internalType": "string",  "name": "newTreeRoot",      "type": "string"},
+               {"indexed": False, "internalType": "string",  "name": "reason",           "type": "string"},
+               {"indexed": False, "internalType": "uint256", "name": "sealedAtBlock",    "type": "uint256"},
+               {"indexed": False, "internalType": "bytes32", "name": "tokenCommitment",  "type": "bytes32"},
+           ],
+       },
+       # isSealed(arId) → bool
+       {
+           "type": "function",
+           "name": "isSealed",
+           "stateMutability": "view",
+           "inputs":  [{"internalType": "string", "name": "", "type": "string"}],
+           "outputs": [{"internalType": "bool",   "name": "", "type": "bool"}],
+       },
+       # sealContinuation(arId) → string
+       {
+           "type": "function",
+           "name": "sealContinuation",
+           "stateMutability": "view",
+           "inputs":  [{"internalType": "string", "name": "", "type": "string"}],
+           "outputs": [{"internalType": "string", "name": "", "type": "string"}],
        },
        # registered(arId) → bool
        {
@@ -141,7 +190,7 @@ The minimal ABI used by ``anchorregistry`` to read from the contract. This is th
 Artifact Types
 --------------
 
-Twenty-three artifact types in eight logical groups. The ``artifact_type_name`` field in every record contains the string name. The ``artifactType`` field in the raw event contains the integer index.
+Twenty-four artifact types in eight logical groups. The ``artifact_type_name`` field in every record contains the string name. The ``artifactType`` field in the raw event contains the integer index.
 
 .. list-table::
    :header-rows: 1
@@ -220,26 +269,30 @@ Twenty-three artifact types in eight logical groups. The ``artifact_type_name`` 
      - Gated
      - ``proof_type``, ``proof_system``, ``circuit_id``, ``vkey_hash``, ``audit_firm``, ``audit_scope``, ``verifier_url``, ``report_url``, ``proof_hash``
    * - 17
+     - ``SEAL``
+     - Self-service
+     - *(registered via dedicated* ``registerSeal`` *function, not* ``registerContent`` *)*
+   * - 18
      - ``RETRACTION``
      - Self-service
      - ``reason``, ``replaced_by``
-   * - 18
+   * - 19
      - ``REVIEW``
      - Review
      - ``review_type``, ``evidence_url``
-   * - 19
+   * - 20
      - ``VOID``
      - Review
      - ``review_ar_id``, ``finding_url``, ``evidence``
-   * - 20
+   * - 21
      - ``AFFIRMED``
      - Review
      - ``affirmed_by``, ``finding_url``
-   * - 21
+   * - 22
      - ``ACCOUNT``
      - Billing
      - ``capacity`` *(uint256)*
-   * - 22
+   * - 23
      - ``OTHER``
      - Catch-all
      - ``kind``, ``platform``, ``url``, ``value``, ``file_manifest_hash``

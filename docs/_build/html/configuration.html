@@ -1,22 +1,22 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Configuration &mdash; anchorregistry 0.1.3 documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <title>Configuration &mdash; anchorregistry 0.1.6 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=6e0256f3"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -29,11 +29,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> anchorregistry
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            anchorregistry
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -61,6 +65,7 @@
 <li class="toctree-l1"><a class="reference internal" href="notebooks/recover.html">The Trust Proof</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/watermark.html">Watermarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/dataframe.html">DataFrame Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/authenticate.html">Authenticate — Trustless Initiation Proof</a></li>
 </ul>
 
         </div>
@@ -76,8 +81,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Configuration</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Configuration</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/configuration.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -88,10 +93,10 @@
            <div itemprop="articleBody">
              
   <section id="configuration">
-<h1>Configuration<a class="headerlink" href="#configuration" title="Permalink to this heading"></a></h1>
+<h1>Configuration<a class="headerlink" href="#configuration" title="Link to this heading"></a></h1>
 <p><code class="docutils literal notranslate"><span class="pre">anchorregistry</span></code> resolves its configuration through a four-level priority chain. Higher levels override lower ones.</p>
 <section id="priority-chain-highest-lowest">
-<h2>Priority chain (highest → lowest)<a class="headerlink" href="#priority-chain-highest-lowest" title="Permalink to this heading"></a></h2>
+<h2>Priority chain (highest → lowest)<a class="headerlink" href="#priority-chain-highest-lowest" title="Link to this heading"></a></h2>
 <ol class="arabic simple">
 <li><p><strong>Explicit call to</strong> <code class="docutils literal notranslate"><span class="pre">configure()</span></code> — always wins</p></li>
 <li><p><strong>Environment variables</strong> — <code class="docutils literal notranslate"><span class="pre">ANCHOR_REGISTRY_ADDRESS</span></code>, <code class="docutils literal notranslate"><span class="pre">BASE_RPC_URL</span></code>, <code class="docutils literal notranslate"><span class="pre">NETWORK</span></code></p></li>
@@ -100,11 +105,11 @@
 </ol>
 </section>
 <section id="environment-variables">
-<h2>Environment variables<a class="headerlink" href="#environment-variables" title="Permalink to this heading"></a></h2>
-<table class="colwidths-given docutils align-default">
+<h2>Environment variables<a class="headerlink" href="#environment-variables" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 30%" />
-<col style="width: 70%" />
+<col style="width: 30.0%" />
+<col style="width: 70.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Variable</p></th>
@@ -130,8 +135,8 @@
 </div>
 </section>
 <section id="configure-function">
-<h2><code class="docutils literal notranslate"><span class="pre">configure()</span></code> function<a class="headerlink" href="#configure-function" title="Permalink to this heading"></a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">anchorregistry</span> <span class="kn">import</span> <span class="n">configure</span>
+<h2><code class="docutils literal notranslate"><span class="pre">configure()</span></code> function<a class="headerlink" href="#configure-function" title="Link to this heading"></a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">anchorregistry</span><span class="w"> </span><span class="kn">import</span> <span class="n">configure</span>
 
 <span class="n">configure</span><span class="p">(</span>
     <span class="n">network</span><span class="o">=</span><span class="s2">&quot;base&quot;</span><span class="p">,</span>          <span class="c1"># &quot;base&quot; or &quot;sepolia&quot;</span>
@@ -143,13 +148,13 @@
 <p>All parameters are optional. Pass only what you need to override.</p>
 </section>
 <section id="network-presets">
-<h2>Network presets<a class="headerlink" href="#network-presets" title="Permalink to this heading"></a></h2>
-<table class="colwidths-given docutils align-default">
+<h2>Network presets<a class="headerlink" href="#network-presets" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 20%" />
-<col style="width: 45%" />
-<col style="width: 20%" />
-<col style="width: 15%" />
+<col style="width: 20.0%" />
+<col style="width: 45.0%" />
+<col style="width: 20.0%" />
+<col style="width: 15.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Network</p></th>
@@ -165,17 +170,17 @@
 <td><p>8453</p></td>
 </tr>
 <tr class="row-odd"><td><p>Sepolia testnet</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">0x9dAb9f5B754f8C56B5F7BAd3E92A8bDe7317AD29</span></code></p></td>
-<td><p>10562312</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0xE772B7f4eC4a92109b8b892Add205ede7c850DBa</span></code></p></td>
+<td><p>10575629</p></td>
 <td><p>11155111</p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="switching-networks-within-a-process">
-<h2>Switching networks within a process<a class="headerlink" href="#switching-networks-within-a-process" title="Permalink to this heading"></a></h2>
+<h2>Switching networks within a process<a class="headerlink" href="#switching-networks-within-a-process" title="Link to this heading"></a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">configure()</span></code> is idempotent — call it again to switch networks:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">anchorregistry</span> <span class="kn">import</span> <span class="n">configure</span><span class="p">,</span> <span class="n">get_by_arid</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">anchorregistry</span><span class="w"> </span><span class="kn">import</span> <span class="n">configure</span><span class="p">,</span> <span class="n">get_by_arid</span>
 
 <span class="c1"># Query Sepolia</span>
 <span class="n">configure</span><span class="p">(</span><span class="n">network</span><span class="o">=</span><span class="s2">&quot;sepolia&quot;</span><span class="p">)</span>
@@ -188,7 +193,7 @@
 </div>
 </section>
 <section id="using-a-custom-rpc-endpoint">
-<h2>Using a custom RPC endpoint<a class="headerlink" href="#using-a-custom-rpc-endpoint" title="Permalink to this heading"></a></h2>
+<h2>Using a custom RPC endpoint<a class="headerlink" href="#using-a-custom-rpc-endpoint" title="Link to this heading"></a></h2>
 <p>Any EVM-compatible JSON-RPC endpoint works — Infura, Alchemy, QuickNode, or your own node:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">configure</span><span class="p">(</span>
     <span class="n">network</span><span class="o">=</span><span class="s2">&quot;sepolia&quot;</span><span class="p">,</span>

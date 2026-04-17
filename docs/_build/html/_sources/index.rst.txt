@@ -12,6 +12,8 @@ anchorregistry
 
 The package queries the contract directly via JSON-RPC. There are no AnchorRegistry servers in the call path. Anyone can clone the repo, run the notebooks, and verify the registry independently — forever.
 
+SPDX-Anchor: `https://anchorregistry.ai/AR-2026-pJ53j6K <https://anchorregistry.ai/AR-2026-pJ53j6K>`_
+
 Installation
 ------------
 
@@ -42,6 +44,7 @@ Installation
    notebooks/recover
    notebooks/watermark
    notebooks/dataframe
+   notebooks/authenticate
 
 ----
 

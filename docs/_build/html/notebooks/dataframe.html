@@ -1,28 +1,29 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DataFrame Analytics &mdash; anchorregistry 0.1.3 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <title>DataFrame Analytics &mdash; anchorregistry 0.1.6 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=6e0256f3"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Authenticate — Trustless Initiation Proof" href="authenticate.html" />
     <link rel="prev" title="Watermarking" href="watermark.html" /> 
 </head>
 
@@ -31,11 +32,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> anchorregistry
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            anchorregistry
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -55,6 +60,7 @@
 <li class="toctree-l1"><a class="reference internal" href="recover.html">The Trust Proof</a></li>
 <li class="toctree-l1"><a class="reference internal" href="watermark.html">Watermarking</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">DataFrame Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authenticate.html">Authenticate — Trustless Initiation Proof</a></li>
 </ul>
 
         </div>
@@ -70,8 +76,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>DataFrame Analytics</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">DataFrame Analytics</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/notebooks/dataframe.ipynb.txt" rel="nofollow"> View page source</a>
       </li>
@@ -82,75 +88,381 @@
            <div itemprop="articleBody">
              
   <section id="DataFrame-Analytics">
-<h1>DataFrame Analytics<a class="headerlink" href="#DataFrame-Analytics" title="Permalink to this heading"></a></h1>
+<h1>DataFrame Analytics<a class="headerlink" href="#DataFrame-Analytics" title="Link to this heading"></a></h1>
 <p>Load the full registry into a pandas DataFrame and run analytics.</p>
 <p>Requires the analytics extra:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip install anchorregistry<span class="o">[</span>analytics<span class="o">]</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>anchorregistry<span class="o">[</span>analytics<span class="o">]</span>
 </pre></div>
 </div>
 <blockquote>
 <div><p>These examples run against Sepolia testnet (<code class="docutils literal notranslate"><span class="pre">network=&quot;sepolia&quot;</span></code>). To run against Base mainnet: replace <code class="docutils literal notranslate"><span class="pre">configure(network=&quot;sepolia&quot;)</span></code> with <code class="docutils literal notranslate"><span class="pre">configure(network=&quot;base&quot;)</span></code>. All function calls, record structures, and output shapes are identical across networks.</p>
 </div></blockquote>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cell 1 — setup</span>
-<span class="kn">from</span> <span class="nn">anchorregistry</span> <span class="kn">import</span> <span class="n">configure</span><span class="p">,</span> <span class="n">get_all</span><span class="p">,</span> <span class="n">to_dataframe</span>
-<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Cell 1 — setup
+from anchorregistry import configure, get_all, to_dataframe
+import pandas as pd
 
-<span class="n">configure</span><span class="p">(</span><span class="n">network</span><span class="o">=</span><span class="s2">&quot;sepolia&quot;</span><span class="p">)</span>
+configure(network=&quot;sepolia&quot;, rpc_url=&quot;https://ethereum-sepolia-rpc.publicnode.com&quot;)
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cell 2 — load full registry into DataFrame</span>
-<span class="n">df</span> <span class="o">=</span> <span class="n">to_dataframe</span><span class="p">(</span><span class="n">get_all</span><span class="p">())</span>
-<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Shape: </span><span class="si">{</span><span class="n">df</span><span class="o">.</span><span class="n">shape</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">dtypes</span>
-</pre></div>
-</div>
-</div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cell 3 — filter by artifact type</span>
-<span class="n">code_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">artifact_type_name</span> <span class="o">==</span> <span class="s2">&quot;CODE&quot;</span><span class="p">]</span>
-<span class="n">code_df</span><span class="p">[[</span><span class="s2">&quot;ar_id&quot;</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">,</span> <span class="s2">&quot;author&quot;</span><span class="p">,</span> <span class="s2">&quot;code_language&quot;</span><span class="p">,</span> <span class="s2">&quot;code_version&quot;</span><span class="p">]]</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Cell 2 — load full registry into DataFrame
+df = to_dataframe(get_all())
+print(f&quot;Shape: {df.shape}&quot;)
+df.dtypes
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+Shape: (13, 28)
+</pre></div></div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cell 4 — filter by author</span>
-<span class="n">ian_df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">.</span><span class="n">author</span> <span class="o">==</span> <span class="s2">&quot;Ian Moore&quot;</span><span class="p">]</span>
-<span class="n">ian_df</span><span class="p">[[</span><span class="s2">&quot;ar_id&quot;</span><span class="p">,</span> <span class="s2">&quot;artifact_type_name&quot;</span><span class="p">,</span> <span class="s2">&quot;title&quot;</span><span class="p">]]</span>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+ar_id                       str
+registered                 bool
+artifact_type_index       int64
+artifact_type_name          str
+tx                          str
+block                     int64
+registrant                  str
+manifest_hash               str
+parent_ar_id                str
+descriptor                  str
+title                       str
+author                      str
+tree_id                     str
+token_commitment            str
+research_doi                str
+research_institution        str
+research_co_authors         str
+research_url                str
+data_data_version           str
+data_format                 str
+data_row_count              str
+data_schema_url             str
+data_url                    str
+model_model_version         str
+model_architecture          str
+model_parameters            str
+model_training_dataset      str
+model_url                   str
+dtype: object
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Cell 3 — filter by artifact type
+# Type-specific data fields are flattened as {type_name}_{field_name}
+# e.g. RESEARCH fields -&gt; research_doi, research_institution, research_co_authors, research_url
+research_df = df[df.artifact_type_name == &quot;RESEARCH&quot;]
+cols = [&quot;ar_id&quot;, &quot;title&quot;, &quot;research_doi&quot;, &quot;research_institution&quot;, &quot;research_url&quot;]
+research_df[[c for c in cols if c in research_df.columns]]
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cell 5 — group by artifact type</span>
-<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;artifact_type_name&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ar_id</th>
+      <th>title</th>
+      <th>research_doi</th>
+      <th>research_institution</th>
+      <th>research_url</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AR-2026-86pNJz1</td>
+      <td>test research</td>
+      <td></td>
+      <td></td>
+      <td>https://arxiv.org/</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AR-2026-yPZBeoP</td>
+      <td>test research</td>
+      <td></td>
+      <td></td>
+      <td>https://arxiv.org/</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AR-2026-A5kgmm5</td>
+      <td>test research</td>
+      <td></td>
+      <td></td>
+      <td>https://arxiv.org/</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AR-2026-L5RMpQ6</td>
+      <td>test research</td>
+      <td></td>
+      <td></td>
+      <td>https://arxiv.org/</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>AR-2026-76ELKeP</td>
+      <td>test research</td>
+      <td></td>
+      <td></td>
+      <td>https://arxiv.org/</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>AR-2026-e5enrj1</td>
+      <td>test research</td>
+      <td></td>
+      <td></td>
+      <td>https://arxiv.org/</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>AR-2026-z19q0J1</td>
+      <td>test research</td>
+      <td></td>
+      <td></td>
+      <td>https://arxiv.org/</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>AR-2026-BPaGWr5</td>
+      <td>test research</td>
+      <td></td>
+      <td></td>
+      <td>https://arxiv.org/</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>AR-2026-b5VeMB6</td>
+      <td>test research</td>
+      <td></td>
+      <td></td>
+      <td>https://arxiv.org/</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>AR-2026-j1BgLvP</td>
+      <td>test research</td>
+      <td></td>
+      <td></td>
+      <td>https://arxiv.org/</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Cell 4 — filter by registrant
+registrant_df = df[df.registrant == &quot;0xc7a7afde1177fbf0bb265ea5a616d1b8d7ed8c44&quot;]
+registrant_df[[&quot;ar_id&quot;, &quot;artifact_type_name&quot;, &quot;title&quot;]]
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cell 6 — tree analysis</span>
-<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;tree_id&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<div class="output_area rendered_html docutils container">
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>ar_id</th>
+      <th>artifact_type_name</th>
+      <th>title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>AR-2026-86pNJz1</td>
+      <td>RESEARCH</td>
+      <td>test research</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>AR-2026-yPZBeoP</td>
+      <td>RESEARCH</td>
+      <td>test research</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>AR-2026-A5kgmm5</td>
+      <td>RESEARCH</td>
+      <td>test research</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>AR-2026-L5RMpQ6</td>
+      <td>RESEARCH</td>
+      <td>test research</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>AR-2026-o5D0Ky5</td>
+      <td>DATA</td>
+      <td>test data</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>AR-2026-76ELKeP</td>
+      <td>RESEARCH</td>
+      <td>test research</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>AR-2026-e5enrj1</td>
+      <td>RESEARCH</td>
+      <td>test research</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>AR-2026-z19q0J1</td>
+      <td>RESEARCH</td>
+      <td>test research</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>AR-2026-BPaGWr5</td>
+      <td>RESEARCH</td>
+      <td>test research</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>AR-2026-b5VeMB6</td>
+      <td>RESEARCH</td>
+      <td>test research</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>AR-2026-j1BgLvP</td>
+      <td>RESEARCH</td>
+      <td>test research</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>AR-2026-APzR4bP</td>
+      <td>DATA</td>
+      <td>test date</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>AR-2026-Q5Kv7B6</td>
+      <td>MODEL</td>
+      <td>test model</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
 </pre></div>
 </div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Cell 5 — group by artifact type
+df.groupby(&quot;artifact_type_name&quot;).size().sort_values(ascending=False)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[5]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+artifact_type_name
+RESEARCH    10
+DATA         2
+MODEL        1
+dtype: int64
+</pre></div></div>
+</div>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Cell 6 — tree analysis
+df.groupby(&quot;tree_id&quot;).size().sort_values(ascending=False)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[6]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+tree_id
+0x21e24ef8dcf0954d82496cf6126f97bfe68e4a906d52790dc7d037b3b4295920    2
+0x56d1414373fca0dc195cd48040fbd57f177eddb10ca1266b02e9bc462b6aa672    2
+0xc17ebcafce735716b7140a53d8b0c8fe01930fd65dcb38b47caae5616729c511    2
+0xf9bb1a04afcf67b27d68b919447aa47954fc21a827d3a45215fc3830ac815021    2
+0x12c5dd0553a378c08f81a60c4059295de312a7d90543db6ce168956f3c48c4a5    1
+0x2acbb63026a066486b38db7b6d2f5dfeb854a65931129d795b5f3620efb83349    1
+0x573d624188ffe8a168de9d820ada40c82ac2ae7cf2691a7ad29c7ed71415350b    1
+0x6b7bbb0c4a7a25a3b3fb6dd9b719e36292057adc8b9f411e15de0a1e90efa215    1
+0xb97c04cf588471ac4c13bc6217253e71f4aa0d280bb8a3961321931ec43d3929    1
+dtype: int64
+</pre></div></div>
 </div>
 </section>
 
@@ -159,6 +471,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="watermark.html" class="btn btn-neutral float-left" title="Watermarking" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="authenticate.html" class="btn btn-neutral float-right" title="Authenticate — Trustless Initiation Proof" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

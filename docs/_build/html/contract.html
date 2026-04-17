@@ -1,22 +1,22 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="./">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contract Reference &mdash; anchorregistry 0.1.3 documentation</title>
-      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <title>Contract Reference &mdash; anchorregistry 0.1.6 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+
   
-        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
-        <script src="_static/jquery.js"></script>
-        <script src="_static/underscore.js"></script>
-        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="_static/doctools.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=6e0256f3"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
@@ -29,11 +29,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="index.html" class="icon icon-home"> anchorregistry
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            anchorregistry
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -47,6 +51,7 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#">Contract Reference</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#deployed-contract">Deployed Contract</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#anchored-event">Anchored Event</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#sealed-event">Sealed Event</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#read-abi">READ_ABI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#artifact-types">Artifact Types</a></li>
 </ul>
@@ -59,6 +64,7 @@
 <li class="toctree-l1"><a class="reference internal" href="notebooks/recover.html">The Trust Proof</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/watermark.html">Watermarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="notebooks/dataframe.html">DataFrame Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="notebooks/authenticate.html">Authenticate — Trustless Initiation Proof</a></li>
 </ul>
 
         </div>
@@ -74,8 +80,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Contract Reference</li>
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Contract Reference</li>
       <li class="wy-breadcrumbs-aside">
             <a href="_sources/contract.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -86,15 +92,15 @@
            <div itemprop="articleBody">
              
   <section id="contract-reference">
-<h1>Contract Reference<a class="headerlink" href="#contract-reference" title="Permalink to this heading"></a></h1>
+<h1>Contract Reference<a class="headerlink" href="#contract-reference" title="Link to this heading"></a></h1>
 <section id="deployed-contract">
-<h2>Deployed Contract<a class="headerlink" href="#deployed-contract" title="Permalink to this heading"></a></h2>
-<table class="colwidths-given docutils align-default">
+<h2>Deployed Contract<a class="headerlink" href="#deployed-contract" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 18%" />
-<col style="width: 45%" />
-<col style="width: 18%" />
-<col style="width: 19%" />
+<col style="width: 18.0%" />
+<col style="width: 45.0%" />
+<col style="width: 18.0%" />
+<col style="width: 19.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Network</p></th>
@@ -110,20 +116,20 @@
 <td><p>TBD</p></td>
 </tr>
 <tr class="row-odd"><td><p>Sepolia testnet</p></td>
-<td><p><code class="docutils literal notranslate"><span class="pre">0x9dAb9f5B754f8C56B5F7BAd3E92A8bDe7317AD29</span></code></p></td>
-<td><p>10562312</p></td>
-<td><p><a class="reference external" href="https://sepolia.etherscan.io/address/0x9dAb9f5B754f8C56B5F7BAd3E92A8bDe7317AD29">View on Etherscan</a></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">0xE772B7f4eC4a92109b8b892Add205ede7c850DBa</span></code></p></td>
+<td><p>10575629</p></td>
+<td><p><a class="reference external" href="https://sepolia.etherscan.io/address/0xE772B7f4eC4a92109b8b892Add205ede7c850DBa">View on Etherscan</a></p></td>
 </tr>
 </tbody>
 </table>
 </section>
 <section id="anchored-event">
-<h2>Anchored Event<a class="headerlink" href="#anchored-event" title="Permalink to this heading"></a></h2>
+<h2>Anchored Event<a class="headerlink" href="#anchored-event" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">Anchored</span></code> event is emitted once per registration. It is the sole source of truth for reconstructing the registry from on-chain data.</p>
-<div class="highlight-solidity notranslate"><div class="highlight"><pre><span></span><span class="kt">event</span><span class="w"> </span><span class="nv">Anchored</span><span class="p">(</span><span class="w"></span>
+<div class="highlight-solidity notranslate"><div class="highlight"><pre><span></span><span class="kt">event</span><span class="w"> </span><span class="nv">Anchored</span><span class="p">(</span>
 <span class="w">    </span><span class="kt">string</span><span class="w">  </span><span class="nv">indexed</span><span class="w"> </span>arId<span class="p">,</span><span class="w">           </span><span class="c1">// AR-ID (keccak256 indexed)</span>
 <span class="w">    </span><span class="kt">address</span><span class="w"> </span><span class="nv">indexed</span><span class="w"> </span>registrant<span class="p">,</span><span class="w">     </span><span class="c1">// wallet that called anchor()</span>
-<span class="w">    </span><span class="kt">uint8</span><span class="w">           </span><span class="nv">artifactType</span><span class="p">,</span><span class="w">   </span><span class="c1">// ArtifactType enum value (0–22)</span>
+<span class="w">    </span><span class="kt">uint8</span><span class="w">           </span><span class="nv">artifactType</span><span class="p">,</span><span class="w">   </span><span class="c1">// ArtifactType enum value (0–23)</span>
 <span class="w">    </span><span class="kt">string</span><span class="w">          </span><span class="nv">arIdPlain</span><span class="p">,</span><span class="w">      </span><span class="c1">// AR-ID plain text (not indexed)</span>
 <span class="w">    </span><span class="kt">string</span><span class="w">          </span><span class="nv">descriptor</span><span class="p">,</span><span class="w">     </span><span class="c1">// short descriptor / subtitle</span>
 <span class="w">    </span><span class="kt">string</span><span class="w">          </span><span class="nv">title</span><span class="p">,</span><span class="w">          </span><span class="c1">// artifact title</span>
@@ -131,16 +137,17 @@
 <span class="w">    </span><span class="kt">string</span><span class="w">          </span><span class="nv">manifestHash</span><span class="p">,</span><span class="w">   </span><span class="c1">// content hash (SHA-256 or IPFS CID)</span>
 <span class="w">    </span><span class="kt">string</span><span class="w">          </span><span class="nv">parentArId</span><span class="p">,</span><span class="w">     </span><span class="c1">// parent AR-ID (&quot;&quot; if root)</span>
 <span class="w">    </span><span class="kt">string</span><span class="w">  </span><span class="nv">indexed</span><span class="w"> </span>treeId<span class="p">,</span><span class="w">         </span><span class="c1">// tree identifier (keccak256 indexed)</span>
-<span class="w">    </span><span class="kt">string</span><span class="w">          </span><span class="nv">treeIdPlain</span><span class="w">     </span><span class="c1">// tree identifier plain text</span>
-<span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="kt">string</span><span class="w">          </span><span class="nv">treeIdPlain</span><span class="p">,</span><span class="w">    </span><span class="c1">// tree identifier plain text</span>
+<span class="w">    </span><span class="kt">bytes32</span><span class="w">         </span><span class="nv">tokenCommitment</span><span class="w"> </span><span class="c1">// keccak256(K || arId), bytes32(0) for governance</span>
+<span class="p">);</span>
 </pre></div>
 </div>
 <p><strong>Field descriptions:</strong></p>
-<table class="colwidths-given docutils align-default">
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 22%" />
-<col style="width: 12%" />
-<col style="width: 66%" />
+<col style="width: 22.0%" />
+<col style="width: 12.0%" />
+<col style="width: 66.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Field</p></th>
@@ -193,11 +200,28 @@
 <td><p><code class="docutils literal notranslate"><span class="pre">string</span></code></p></td>
 <td><p>Human-readable tree identifier. Identical to <code class="docutils literal notranslate"><span class="pre">treeId</span></code> but not indexed.</p></td>
 </tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">tokenCommitment</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">bytes32</span></code></p></td>
+<td><p>Ownership proof: <code class="docutils literal notranslate"><span class="pre">keccak256(K</span> <span class="pre">||</span> <span class="pre">arId)</span></code> for user-initiated anchors, <code class="docutils literal notranslate"><span class="pre">bytes32(0)</span></code> for governance anchors. <code class="docutils literal notranslate"><span class="pre">K</span></code> is the ownership token known only to the registrant.</p></td>
+</tr>
 </tbody>
 </table>
 </section>
+<section id="sealed-event">
+<h2>Sealed Event<a class="headerlink" href="#sealed-event" title="Link to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">Sealed</span></code> event is emitted when a tree root is sealed via <code class="docutils literal notranslate"><span class="pre">registerSeal</span></code>. A sealed tree is authentic and complete — no new anchors may be appended. AR governance (VOID, REVIEW, AFFIRMED) can still target anchors within sealed trees.</p>
+<div class="highlight-solidity notranslate"><div class="highlight"><pre><span></span><span class="kt">event</span><span class="w"> </span><span class="nv">Sealed</span><span class="p">(</span>
+<span class="w">    </span><span class="kt">string</span><span class="w">  </span><span class="nv">indexed</span><span class="w"> </span>arId<span class="p">,</span><span class="w">            </span><span class="c1">// root AR-ID being sealed</span>
+<span class="w">    </span><span class="kt">string</span><span class="w">          </span><span class="nv">newTreeRoot</span><span class="p">,</span><span class="w">      </span><span class="c1">// optional continuation pointer</span>
+<span class="w">    </span><span class="kt">string</span><span class="w">          </span><span class="nv">reason</span><span class="p">,</span><span class="w">           </span><span class="c1">// human-readable reason</span>
+<span class="w">    </span><span class="kt">uint256</span><span class="w">         </span><span class="nv">sealedAtBlock</span><span class="p">,</span><span class="w">    </span><span class="c1">// block number of seal</span>
+<span class="w">    </span><span class="kt">bytes32</span><span class="w">         </span><span class="nv">tokenCommitment</span><span class="w">   </span><span class="c1">// H(K || C_seal) — always non-zero</span>
+<span class="p">);</span>
+</pre></div>
+</div>
+</section>
 <section id="read-abi">
-<h2>READ_ABI<a class="headerlink" href="#read-abi" title="Permalink to this heading"></a></h2>
+<h2>READ_ABI<a class="headerlink" href="#read-abi" title="Link to this heading"></a></h2>
 <p>The minimal ABI used by <code class="docutils literal notranslate"><span class="pre">anchorregistry</span></code> to read from the contract. This is the only ABI needed — the package never writes to the contract.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">READ_ABI</span> <span class="o">=</span> <span class="p">[</span>
     <span class="c1"># Anchored event</span>
@@ -217,7 +241,37 @@
             <span class="p">{</span><span class="s2">&quot;indexed&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;parentArId&quot;</span><span class="p">,</span>   <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">},</span>
             <span class="p">{</span><span class="s2">&quot;indexed&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;treeId&quot;</span><span class="p">,</span>       <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">},</span>
             <span class="p">{</span><span class="s2">&quot;indexed&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>            <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;treeIdPlain&quot;</span><span class="p">,</span>  <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;indexed&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;bytes32&quot;</span><span class="p">,</span>           <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;tokenCommitment&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bytes32&quot;</span><span class="p">},</span>
         <span class="p">],</span>
+    <span class="p">},</span>
+    <span class="c1"># Sealed event</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;anonymous&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Sealed&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;event&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;inputs&quot;</span><span class="p">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="s2">&quot;indexed&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>  <span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;arId&quot;</span><span class="p">,</span>            <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;indexed&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;newTreeRoot&quot;</span><span class="p">,</span>      <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;indexed&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span>  <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;reason&quot;</span><span class="p">,</span>           <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;indexed&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;uint256&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;sealedAtBlock&quot;</span><span class="p">,</span>    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;uint256&quot;</span><span class="p">},</span>
+            <span class="p">{</span><span class="s2">&quot;indexed&quot;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span> <span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;bytes32&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;tokenCommitment&quot;</span><span class="p">,</span>  <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bytes32&quot;</span><span class="p">},</span>
+        <span class="p">],</span>
+    <span class="p">},</span>
+    <span class="c1"># isSealed(arId) → bool</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;function&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;isSealed&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;stateMutability&quot;</span><span class="p">:</span> <span class="s2">&quot;view&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;inputs&quot;</span><span class="p">:</span>  <span class="p">[{</span><span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">}],</span>
+        <span class="s2">&quot;outputs&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;bool&quot;</span><span class="p">,</span>   <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;bool&quot;</span><span class="p">}],</span>
+    <span class="p">},</span>
+    <span class="c1"># sealContinuation(arId) → string</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;function&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;sealContinuation&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;stateMutability&quot;</span><span class="p">:</span> <span class="s2">&quot;view&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;inputs&quot;</span><span class="p">:</span>  <span class="p">[{</span><span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">}],</span>
+        <span class="s2">&quot;outputs&quot;</span><span class="p">:</span> <span class="p">[{</span><span class="s2">&quot;internalType&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span> <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;string&quot;</span><span class="p">}],</span>
     <span class="p">},</span>
     <span class="c1"># registered(arId) → bool</span>
     <span class="p">{</span>
@@ -248,14 +302,14 @@
 </div>
 </section>
 <section id="artifact-types">
-<h2>Artifact Types<a class="headerlink" href="#artifact-types" title="Permalink to this heading"></a></h2>
-<p>Twenty-three artifact types in eight logical groups. The <code class="docutils literal notranslate"><span class="pre">artifact_type_name</span></code> field in every record contains the string name. The <code class="docutils literal notranslate"><span class="pre">artifactType</span></code> field in the raw event contains the integer index.</p>
-<table class="colwidths-given docutils align-default">
+<h2>Artifact Types<a class="headerlink" href="#artifact-types" title="Link to this heading"></a></h2>
+<p>Twenty-four artifact types in eight logical groups. The <code class="docutils literal notranslate"><span class="pre">artifact_type_name</span></code> field in every record contains the string name. The <code class="docutils literal notranslate"><span class="pre">artifactType</span></code> field in the raw event contains the integer index.</p>
+<table class="docutils align-default">
 <colgroup>
-<col style="width: 10%" />
-<col style="width: 18%" />
-<col style="width: 18%" />
-<col style="width: 54%" />
+<col style="width: 10.0%" />
+<col style="width: 18.0%" />
+<col style="width: 18.0%" />
+<col style="width: 54.0%" />
 </colgroup>
 <thead>
 <tr class="row-odd"><th class="head"><p>Index</p></th>
@@ -351,31 +405,36 @@
 <td><p><code class="docutils literal notranslate"><span class="pre">proof_type</span></code>, <code class="docutils literal notranslate"><span class="pre">proof_system</span></code>, <code class="docutils literal notranslate"><span class="pre">circuit_id</span></code>, <code class="docutils literal notranslate"><span class="pre">vkey_hash</span></code>, <code class="docutils literal notranslate"><span class="pre">audit_firm</span></code>, <code class="docutils literal notranslate"><span class="pre">audit_scope</span></code>, <code class="docutils literal notranslate"><span class="pre">verifier_url</span></code>, <code class="docutils literal notranslate"><span class="pre">report_url</span></code>, <code class="docutils literal notranslate"><span class="pre">proof_hash</span></code></p></td>
 </tr>
 <tr class="row-odd"><td><p>17</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">SEAL</span></code></p></td>
+<td><p>Self-service</p></td>
+<td><p><em>(registered via dedicated</em> <code class="docutils literal notranslate"><span class="pre">registerSeal</span></code> <em>function, not</em> <code class="docutils literal notranslate"><span class="pre">registerContent</span></code> <em>)</em></p></td>
+</tr>
+<tr class="row-even"><td><p>18</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">RETRACTION</span></code></p></td>
 <td><p>Self-service</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">reason</span></code>, <code class="docutils literal notranslate"><span class="pre">replaced_by</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>18</p></td>
+<tr class="row-odd"><td><p>19</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">REVIEW</span></code></p></td>
 <td><p>Review</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">review_type</span></code>, <code class="docutils literal notranslate"><span class="pre">evidence_url</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>19</p></td>
+<tr class="row-even"><td><p>20</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">VOID</span></code></p></td>
 <td><p>Review</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">review_ar_id</span></code>, <code class="docutils literal notranslate"><span class="pre">finding_url</span></code>, <code class="docutils literal notranslate"><span class="pre">evidence</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>20</p></td>
+<tr class="row-odd"><td><p>21</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">AFFIRMED</span></code></p></td>
 <td><p>Review</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">affirmed_by</span></code>, <code class="docutils literal notranslate"><span class="pre">finding_url</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>21</p></td>
+<tr class="row-even"><td><p>22</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">ACCOUNT</span></code></p></td>
 <td><p>Billing</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">capacity</span></code> <em>(uint256)</em></p></td>
 </tr>
-<tr class="row-even"><td><p>22</p></td>
+<tr class="row-odd"><td><p>23</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">OTHER</span></code></p></td>
 <td><p>Catch-all</p></td>
 <td><p><code class="docutils literal notranslate"><span class="pre">kind</span></code>, <code class="docutils literal notranslate"><span class="pre">platform</span></code>, <code class="docutils literal notranslate"><span class="pre">url</span></code>, <code class="docutils literal notranslate"><span class="pre">value</span></code>, <code class="docutils literal notranslate"><span class="pre">file_manifest_hash</span></code></p></td>

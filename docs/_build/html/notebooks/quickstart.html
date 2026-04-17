@@ -1,25 +1,25 @@
+
+
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
+<html class="writer-html5" lang="en" data-content_root="../">
 <head>
-  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quickstart &mdash; anchorregistry 0.1.3 documentation</title>
-      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-      <link rel="stylesheet" href="../_static/nbsphinx-code-cells.css" type="text/css" />
-  <!--[if lt IE 9]>
-    <script src="../_static/js/html5shiv.min.js"></script>
-  <![endif]-->
+  <title>Quickstart &mdash; anchorregistry 0.1.6 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/nbsphinx-code-cells.css?v=2aa19091" />
+
   
-        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-        <script src="../_static/jquery.js"></script>
-        <script src="../_static/underscore.js"></script>
-        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-        <script src="../_static/doctools.js"></script>
-        <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
-        <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-        <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=6e0256f3"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+      <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+      <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -32,11 +32,15 @@
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
         <div class="wy-side-nav-search" >
-            <a href="../index.html" class="icon icon-home"> anchorregistry
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            anchorregistry
           </a>
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
@@ -56,6 +60,7 @@
 <li class="toctree-l1"><a class="reference internal" href="recover.html">The Trust Proof</a></li>
 <li class="toctree-l1"><a class="reference internal" href="watermark.html">Watermarking</a></li>
 <li class="toctree-l1"><a class="reference internal" href="dataframe.html">DataFrame Analytics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="authenticate.html">Authenticate — Trustless Initiation Proof</a></li>
 </ul>
 
         </div>
@@ -71,8 +76,8 @@
         <div class="rst-content">
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>Quickstart</li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Quickstart</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/notebooks/quickstart.ipynb.txt" rel="nofollow"> View page source</a>
       </li>
@@ -83,38 +88,86 @@
            <div itemprop="articleBody">
              
   <section id="Quickstart">
-<h1>Quickstart<a class="headerlink" href="#Quickstart" title="Permalink to this heading"></a></h1>
+<h1>Quickstart<a class="headerlink" href="#Quickstart" title="Link to this heading"></a></h1>
 <p>Minimal working example. One anchor, live output.</p>
 <blockquote>
 <div><p>These examples run against Sepolia testnet (<code class="docutils literal notranslate"><span class="pre">network=&quot;sepolia&quot;</span></code>). To run against Base mainnet: replace <code class="docutils literal notranslate"><span class="pre">configure(network=&quot;sepolia&quot;)</span></code> with <code class="docutils literal notranslate"><span class="pre">configure(network=&quot;base&quot;)</span></code>. All function calls, record structures, and output shapes are identical across networks.</p>
 </div></blockquote>
 <div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cell 1 — setup</span>
-<span class="kn">from</span> <span class="nn">anchorregistry</span> <span class="kn">import</span> <span class="n">configure</span><span class="p">,</span> <span class="n">get_by_arid</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Cell 1 — setup
+from anchorregistry import configure, get_by_arid
 
-<span class="n">configure</span><span class="p">(</span><span class="n">network</span><span class="o">=</span><span class="s2">&quot;sepolia&quot;</span><span class="p">)</span>
+configure(network=&quot;sepolia&quot;, rpc_url=&quot;https://ethereum-sepolia-rpc.publicnode.com&quot;)
 </pre></div>
 </div>
 </div>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
-<div class="input_area highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Cell 2 — fetch a single anchor</span>
-<span class="n">record</span> <span class="o">=</span> <span class="n">get_by_arid</span><span class="p">(</span><span class="s2">&quot;AR-2026-x1llnO1&quot;</span><span class="p">)</span>
-<span class="n">record</span>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Cell 2 — fetch a single anchor
+record = get_by_arid(&quot;AR-2026-j1BgLvP&quot;)
+record
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
+</pre></div>
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+{&#39;ar_id&#39;: &#39;AR-2026-j1BgLvP&#39;,
+ &#39;registered&#39;: True,
+ &#39;artifact_type_index&#39;: 1,
+ &#39;artifact_type_name&#39;: &#39;RESEARCH&#39;,
+ &#39;tx&#39;: &#39;0xdadb0f57b8fa1f3c3324d06eceecd372d9e307133b2b22606be36bd666aac88f&#39;,
+ &#39;block&#39;: 10606566,
+ &#39;registrant&#39;: &#39;0xc7a7afde1177fbf0bb265ea5a616d1b8d7ed8c44&#39;,
+ &#39;manifest_hash&#39;: &#39;1183500c69149115de1508e5679877e505eaa6c056a299a5db8085c7f54514ee&#39;,
+ &#39;parent_ar_id&#39;: &#39;&#39;,
+ &#39;descriptor&#39;: &#39;&#39;,
+ &#39;title&#39;: &#39;test research&#39;,
+ &#39;author&#39;: &#39;&#39;,
+ &#39;tree_id&#39;: &#39;0x6b7bbb0c4a7a25a3b3fb6dd9b719e36292057adc8b9f411e15de0a1e90efa215&#39;,
+ &#39;token_commitment&#39;: &#39;0x6b7bbb0c4a7a25a3b3fb6dd9b719e36292057adc8b9f411e15de0a1e90efa215&#39;,
+ &#39;data&#39;: {&#39;doi&#39;: &#39;&#39;,
+  &#39;institution&#39;: &#39;&#39;,
+  &#39;co_authors&#39;: &#39;&#39;,
+  &#39;url&#39;: &#39;https://arxiv.org/&#39;}}
+</pre></div></div>
 </div>
 <p>Every record has two levels:</p>
 <ul class="simple">
-<li><p><strong>Universal fields</strong> — <code class="docutils literal notranslate"><span class="pre">ar_id</span></code>, <code class="docutils literal notranslate"><span class="pre">title</span></code>, <code class="docutils literal notranslate"><span class="pre">author</span></code>, <code class="docutils literal notranslate"><span class="pre">artifact_type_name</span></code>, <code class="docutils literal notranslate"><span class="pre">manifest_hash</span></code>, <code class="docutils literal notranslate"><span class="pre">registrant</span></code>, <code class="docutils literal notranslate"><span class="pre">tree_id</span></code>, <code class="docutils literal notranslate"><span class="pre">parent_ar_id</span></code>, <code class="docutils literal notranslate"><span class="pre">block_number</span></code>, <code class="docutils literal notranslate"><span class="pre">tx_hash</span></code></p></li>
+<li><p><strong>Universal fields</strong> — <code class="docutils literal notranslate"><span class="pre">ar_id</span></code>, <code class="docutils literal notranslate"><span class="pre">title</span></code>, <code class="docutils literal notranslate"><span class="pre">author</span></code>, <code class="docutils literal notranslate"><span class="pre">artifact_type_name</span></code>, <code class="docutils literal notranslate"><span class="pre">manifest_hash</span></code>, <code class="docutils literal notranslate"><span class="pre">registrant</span></code>, <code class="docutils literal notranslate"><span class="pre">tree_id</span></code>, <code class="docutils literal notranslate"><span class="pre">parent_ar_id</span></code>, <code class="docutils literal notranslate"><span class="pre">token_commitment</span></code>, <code class="docutils literal notranslate"><span class="pre">block</span></code>, <code class="docutils literal notranslate"><span class="pre">tx</span></code></p></li>
 <li><p><strong>Type-specific fields</strong> — nested under <code class="docutils literal notranslate"><span class="pre">record[&quot;data&quot;]</span></code>, keys depend on <code class="docutils literal notranslate"><span class="pre">artifact_type_name</span></code></p></li>
 </ul>
-<p>See <a class="reference internal" href="../quickstart.html"><span class="doc">Quickstart</span></a> for a full field reference.</p>
+<p>For <code class="docutils literal notranslate"><span class="pre">RESEARCH</span></code> records, <code class="docutils literal notranslate"><span class="pre">data</span></code> contains: <code class="docutils literal notranslate"><span class="pre">doi</span></code>, <code class="docutils literal notranslate"><span class="pre">institution</span></code>, <code class="docutils literal notranslate"><span class="pre">co_authors</span></code>, <code class="docutils literal notranslate"><span class="pre">url</span></code>.</p>
+<div class="nbinput docutils container">
+<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
+</pre></div>
+</div>
+<div class="input_area highlight-ipython3 notranslate"><div class="highlight"><pre><span></span># Cell 3 — error handling
+from anchorregistry import AnchorNotFoundError, ConfigurationError
+
+try:
+    get_by_arid(&quot;AR-0000-INVALID&quot;)
+except AnchorNotFoundError as e:
+    print(f&quot;AnchorNotFoundError: {e}&quot;)
+</pre></div>
+</div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+AnchorNotFoundError: AR-ID not found on-chain: AR-0000-INVALID
+</pre></div></div>
+</div>
 </section>
 
 
